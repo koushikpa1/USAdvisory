@@ -10,6 +10,7 @@ public partial class AllWatchOutNews : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        //This is a sample checkin to GITHUB
         currentDate.Text = DateTime.Now.ToShortDateString();
         WatchOutNews _watchOut = new WatchOutNews();
         List<WatchOutNews> listWatchOut = new List<WatchOutNews>();
