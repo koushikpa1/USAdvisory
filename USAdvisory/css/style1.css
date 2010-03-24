@@ -1,0 +1,685 @@
+
+body
+{
+background-color:#cccccc;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#c1c1c1;
+margin:0px;
+}
+
+
+h1
+{
+font-family:Arial, Helvetica, sans-serif;
+font-size:18px;
+color:#000000;
+font-weight:normal;
+margin:0px;
+}
+
+
+a
+{
+color:#000000;
+text-decoration:none;
+}
+
+a:hover
+{
+color:#868686;
+text-decoration:none;
+}
+
+
+.main-block
+{
+width:1000px;
+height: auto !important;
+min-height:950px !important;
+height:950px;
+margin:0 auto;
+background-color:#FFFFFF;
+}
+
+.top-block
+{
+width:1000px;
+height:210px;
+background-color:#3f87d1;
+margin:0 auto;
+}
+
+/*....................upper-header................*/
+
+.upper-header
+{
+background:url(../images/upper-header.jpg) no-repeat;
+width:1000px;
+height:134px;
+}
+
+.upper-header-left
+{
+float:left;
+width:236px;
+height:124px;
+margin-top:10px;
+margin-left:13px !important;
+margin-left:7px;
+}
+
+.upper-header-middle
+{
+float:left;
+width:406px;
+height:80px;
+margin-top:10px;
+margin-top:30px;
+margin-left:50px;
+}
+
+.upper-header-right
+{
+float:left;
+width:260px;
+height:124px;
+margin-left:20px;
+}
+
+.upper-header-add
+{
+width:406px;
+height:72px;
+}
+
+.upper-header-login-box
+{
+background:url(../images/user-name-box.jpg) no-repeat;
+width:271px;
+height:125px;
+margin-top:6px;
+}
+/*....................upper-header-->>................*/
+
+.logo
+{
+width:236px;
+height:121px;
+}
+
+/*....................navigation................*/
+
+.navigation-block
+{
+background:url(../images/navigation-bar.jpg) no-repeat;
+width:1000px;
+height:41px;
+}
+
+#menubar
+{
+margin:0 auto;
+width:1000px;
+}
+
+#menu-content
+{
+float:left;
+padding: 0;
+position: relative;
+margin-left:12px !important;
+margin-left:6px;
+width:770px;
+}
+
+#menu-content ul 
+{
+	color: #FFF;
+	margin: 0;
+	padding-left: 0;
+}
+
+#menu-content li 
+{ display:inline; }
+
+#menu-content li a
+{
+	font: 12px verdana, Arial,sans-serif;
+	padding-top:12px;	
+	margin:0px;
+	float:left;
+	text-align:center;
+	color: #FFF;
+	text-decoration: none;
+	padding:15px 13px 15px 13px;
+}
+
+#menu-content li a:hover
+{
+	background-color:#3f87d1;
+}
+
+
+#menu-content li a#current
+{
+	background-color:#3f87d1;
+	font-weight:bold;
+}
+.blueline
+{
+	background:url(../images/navigation-middle-line.jpg) no-repeat;
+	width:2px;
+	height:41px;
+	float:left;
+}
+
+
+/*....................navigation-->>................*/
+
+
+
+/*....................content-block................*/
+
+.content-block
+{
+width:1000px;
+margin:0 auto;
+/*background-color:#CCCCCC;*/
+}
+
+
+/*....................content-block-left................*/
+
+.content-block-left
+{
+width:227px;
+float:left;
+margin-left:13px !important;
+margin-left:7px;
+margin-top:10px;
+}
+/*......boxes.....*/
+
+.blue-box-home-page-1
+{
+width:227px;
+}
+
+.blue-box-home-page-2
+{
+width:227px;
+float:left;
+margin-top:10px;
+}
+
+.blue-box-upper-home-page
+{
+background:url(../images/home-bluebox-upper.jpg) no-repeat;
+width:217px;
+height:30px;
+padding-top:10px;
+padding-left:10px;
+float:left;
+}
+
+.blue-box-middle-home-page
+{
+background:url(../images/home-bluebox-middle.jpg) repeat-y;
+width:227px;
+height:auto !important;
+min-height:180px !important;
+height:180px;
+float:left;
+}
+
+
+.blue-box-middle-home-page1
+{
+background:url(../images/home-bluebox-middle.jpg) repeat-y;
+width:227px;
+height:auto !important;
+min-height:180px !important;
+height:180px;
+float:left;
+}
+
+
+.bullet-margin-top
+{
+margin-top:25px !important;
+margin-top:0px;
+}
+
+.blue-box-middle-home-page ul
+{
+margin-top:10px;
+}
+
+.blue-box-middle-home-page li
+{
+background: url(../images/bullet-black.jpg) no-repeat;
+list-style:none;
+height:13px;
+margin-left:-30px;
+padding-left:15px;
+clear:both;
+margin-bottom:10px !important;
+margin-bottom:7px;
+}
+
+.blue-box-middle-home-page1 ul
+{
+margin-top:10px;
+}
+
+.blue-box-middle-home-page1 li
+{
+background: url(../images/bullet-black.jpg) no-repeat;
+list-style:none;
+height:26px;
+margin-left:-30px;
+padding-left:15px;
+clear:both;
+margin-bottom:10px !important;
+margin-bottom:7px;
+color:#000000;
+}
+
+.blue-box-middle-home-page4 ul
+{
+margin-top:10px;
+}
+
+.blue-box-middle-home-page4 li
+{
+background: url(../images/bullet-black.jpg) no-repeat;
+list-style:none;
+margin-left:-30px;
+padding-left:15px;
+clear:both;
+margin-bottom:10px !important;
+margin-bottom:7px;
+color:#000000;
+}
+
+
+
+.blue-box-bottom-home-page
+{
+background:url(../images/home-bluebox-bottom.jpg) no-repeat;
+width:227px;
+height:10px;
+float:left;
+}
+
+.star-icon
+{
+float:left;
+margin-top:-3px;
+margin-right:5px;
+}
+
+.add
+{
+float:left;
+margin-top:10px;
+}
+
+/*......boxes.....*/
+/*....................content-block-left-->>................*/
+
+
+/*....................content-block-middle................*/
+.content-block-middle
+{
+width:500px;
+height:500px;
+background-color:#FFFFFF;
+float:left;
+margin-left:10px;
+margin-top:10px;
+}
+
+.greybox-home-page-1
+{
+width:500px;
+float:left;
+text-align:justify;
+}
+
+.greybox-home-page-2
+{
+width:500px;
+float:left;
+margin-top:10px !important;
+margin-top:14px;
+}
+
+.greybox-home-page-upper
+{
+background:url(../images/home-greybox-upper.jpg) no-repeat;
+width:490px;
+height:29px;
+float:left;
+padding-top:10px;
+padding-left:10px;
+}
+
+.greybox-home-page-middle
+{
+background:url(../images/home-greybox-middle.jpg) repeat-y;
+width:475px;
+height:auto !important;
+min-height:110px !important;
+height:110px;
+float:left;
+padding:10px 15px 10px 10px;
+color:#000000;
+}
+
+.greybox-home-page-middle-1
+{
+background:url(../images/home-greybox-middle.jpg) repeat-y;
+width:500px;
+height:auto !important;
+min-height:180px !important;
+height:180px;
+float:left;
+color:#000000;
+}
+
+.greybox-home-page-middle-1 ul
+{
+margin-top:10px;
+}
+
+.greybox-home-page-middle-1 li
+{
+background: url(../images/red-bullet-+.jpg) no-repeat;
+list-style:none;
+height:13px;
+margin-left:-30px;
+padding-left:15px;
+clear:both;
+margin-bottom:10px !important;
+margin-bottom:7px;
+}
+
+.greybox-home-page-middle-2
+{
+background:url(../images/home-greybox-middle.jpg) repeat-y;
+width:475px;
+height:auto !important;
+min-height:70px !important;
+height:70px;
+float:left;
+padding:10px 15px 10px 10px;
+color:#000000;
+}
+
+.greybox-home-page-down
+{
+background:url(../images/home-greybox-down.jpg) no-repeat;
+width:500px;
+height:10px;
+float:left;
+}
+
+.daily-inbox
+{
+background:url(../images/daily-inbox.jpg) no-repeat;
+width:500px;
+height:46px;
+float:left;
+margin-top:6px !important;
+margin-top:2px;
+}
+
+/*....................content-block-middle-->>................*/
+
+/*....................content-block-right................*/
+.content-block-right
+{
+width:227px;
+height:500px;
+background-color:#FFFFFF;
+float:left;
+margin-left:10px;
+margin-top:10px;
+}
+
+.greybox-home-page-right
+{
+width:227px;
+float:left;
+}
+
+.greybox-upper-right
+{
+background: url(../images/side-greybox-upper.jpg) no-repeat;
+width:217px;
+height:29px;
+float:left;
+padding-top:10px;
+padding-left:10px;
+}
+
+.greybox-middle-right
+{
+background:url(../images/side-greybox-middle.jpg) repeat-y;
+width:227px;
+height:auto !important;
+min-height:180px !important;
+height:180px;
+float:left;
+text-align:center;
+}
+
+.greybox-down-right
+{
+background:url(../images/side-greybox-down.jpg) no-repeat;
+width:227px;
+height:10px;
+float:left;
+}
+/*....................content-block-right-->>................*/
+
+
+/*....................content-block-->>................*/
+
+
+/*....................form-home-upper................*/
+		.form-home-upper
+		{
+		   width:250px; 
+		   font-family:Arial, Helvetica, sans-serif;
+           font-size:11px;
+           color:#000000;
+		   font-weight:normal;
+		   margin-left:20px !important; 
+		   margin-left:10px;
+		   float:left;
+		} 
+		
+  		.form-home-upper a
+ 	    {
+	    color:#000000;
+	    text-decoration:underline;
+	     }
+		
+		.form-home-upper a:hover
+ 	    {
+	    color:#000000;
+		text-decoration:none;
+	     }
+		
+		.form-home-upper .input-1
+		{
+		   border :none; 
+		   font : normal 11px Arial, Helvetica, sans-serif;
+		   color : #000000;
+		   width:159px;
+		   height:18px;
+		   background: url(../images/text-box-1.jpg) no-repeat;
+		} 
+		.form-home-upper .button-1
+		{ 
+			margin:0;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:11px;
+			background:url(../images/login-button-1.jpg) no-repeat;
+			width:64px;
+			height:29px;
+			color:#ffffff;
+			float:right;
+			border:none;
+			cursor:pointer;
+			margin-right:20px;
+			padding-bottom:2px;
+		}
+/*....................form-home-upper-->>................*/
+
+/*....................form-daily-inbox................*/
+		.form-daily-inbox
+		{
+		   width:260px; 
+		   font-family:Arial, Helvetica, sans-serif;
+           font-size:11px;
+           color:#000000;
+		   font-weight:normal;
+		   margin-left:170px !important; 
+		   margin-left:85px;
+		   float:left;
+		   margin-top:8px;
+		} 
+		
+		
+		.form-daily-inbox .input-2
+		{
+		   border :none; 
+		   font : normal 11px Arial, Helvetica, sans-serif;
+		   color : #000000;
+		   width:217px;
+		   height:22px;
+		   background:url(../images/text-box-daily.jpg) no-repeat;
+		   padding-top:2px;
+		} 
+		.form-daily-inbox .button-2
+		{ 
+			margin:0;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:11px;
+			background:url(../images/free-sign-up-button.jpg) no-repeat;
+			width:79px;
+			height:22px;
+			color:#ffffff;
+			float:right;
+			border:none;
+			cursor:pointer;
+			margin-right:14px;
+			padding-bottom:2px;
+		}
+/*....................form-daily-inbox................*/
+/*....................form-recent-performance................*/
+		.form-recent-performance
+		{
+		   width:400px; 
+		   font-family:Arial, Helvetica, sans-serif;
+           font-size:12px;
+           color:#000000;
+		   font-weight:normal;
+		   float:left;
+		   margin-top:8px;
+		} 
+		
+		
+		.form-recent-performance .input-3
+		{
+		   border :none; 
+		   font : normal 11px Arial, Helvetica, sans-serif;
+		   color : #000000;
+		   width:144px;
+		   height:21px;
+		   background:url(../images/text-box-recent-per.jpg) no-repeat;
+		   padding-top:2px;
+		} 
+		.form-recent-performance .button-3
+		{ 
+			margin:0;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:11px;
+			background:url(../images/button-submit.jpg) no-repeat;
+			width:62px;
+			height:19px;
+			color:#ffffff;
+			float:right;
+			border:none;
+			cursor:pointer;
+			margin-right:14px;
+			padding-bottom:2px;
+		}
+/*....................form-recent-performance................*/
+
+/* ............... footer  ...................*/
+.footer
+{
+width:1000px;
+height:25px;
+background-color:#e1e1e1;
+margin:0 auto;
+float:left;
+margin-top:10px;
+padding-top:10px;
+font-size:11px;
+}
+
+.footer-left
+{
+color:#000000;
+width:370px;
+float:left;
+margin-left:30px !important;
+margin-left:15px;
+}
+
+.footer-right
+{
+color:#000000;
+width:200px;
+float:right;
+}
+
+.footer a
+{
+color:#000000;
+font-size:11px;
+text-decoration:none;
+}
+
+.footer a:hover
+{
+color:#999999;
+}
+
+
+
+
+.color-white
+{
+color:#FFFFFF;
+}
+
+.clear-div
+{
+clear:both;
+}
+
+
+
+
+
+
+
+
+

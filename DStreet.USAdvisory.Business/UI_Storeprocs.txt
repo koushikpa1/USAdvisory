@@ -1,0 +1,27 @@
+﻿1.UI_GetUserCredentials --> Pass UserId, Password --> Get Subscriber Object back
+
+	UI_GetUserCredentials 'satish.bhogadi@gmail.com','anvita'
+
+2.UI_GetAllWatchOutNewsForToday  --> No Params
+		
+3.UI_GetAllNewsViews --> No Params
+
+4.UI_GetNewsViewsByNewsId --> @NewsId 
+
+5.UI_EmailSubscription --> Email Address
+
+6.UI_GetPremiumServices --> @TypeOfTradeId
+
+7.UI_GetPremiumServicesByPremiumServiceId --> @TypeOfTradeId int,@PremiumServiceId int
+
+8.InsertUser
+
+9.InsertOrder
+
+10. GetAllClosedPortfolio
+
+11. GetAllOpenPortfolio
+
+12. UI_GetAllMarketCommentaryForToday
+
+13. 
