@@ -11,6 +11,13 @@ public partial class AllWatchOutNews : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         currentDate.Text = DateTime.Now.ToShortDateString();
+
+
+
+
+
+
+
         WatchOutNews _watchOut = new WatchOutNews();
         List<WatchOutNews> listWatchOut = new List<WatchOutNews>();
         listWatchOut = _watchOut.GetWatchOutNews();
