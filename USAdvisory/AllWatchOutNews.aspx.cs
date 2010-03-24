@@ -18,6 +18,9 @@ public partial class AllWatchOutNews : System.Web.UI.Page
 
 
 
+
+
+
         WatchOutNews _watchOut = new WatchOutNews();
         List<WatchOutNews> listWatchOut = new List<WatchOutNews>();
         listWatchOut = _watchOut.GetWatchOutNews();
