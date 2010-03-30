@@ -1,10 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AllWatchOutNews.aspx.cs" Inherits="AllWatchOutNews" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="AllWatchOutNews.aspx.cs"
+    Inherits="AllWatchOutNews" %>
 
-     <p class="popupHeader"><asp:Label id="currentDate" runat="server"></asp:Label></p>
-
+<p class="popupHeader">
+    <asp:label id="currentDate" runat="server"></asp:label>
+</p>
 <table>
-
-	    <asp:Repeater ID="watchOutRepeater" runat="server" EnableViewState="false">
+    <asp:repeater id="watchOutRepeater" runat="server" enableviewstate="false">
         <ItemTemplate>
         <tr>
         <td>
@@ -28,7 +29,6 @@
         </td>
         </tr>
         </AlternatingItemTemplate>
-    </asp:Repeater>
-    </table>
+    </asp:repeater>
+</table>
 <%--</ul>--%>
-
