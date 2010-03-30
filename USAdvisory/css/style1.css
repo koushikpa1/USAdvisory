@@ -674,7 +674,13 @@ color:#FFFFFF;
 {
 clear:both;
 }
-
+.popupHeader
+{
+    font-size: 1.3em; 
+    font-weight: bold;
+    background:url(../images/grey-header.jpg);
+    text-align:center;
+}
 
 
 

@@ -14,7 +14,7 @@
         </ItemTemplate>
     </asp:Repeater>
     </ul>
-		<span class="more-news"><a href="AllWatchOutNews.aspx" rel="facebox">More News</a></span>		</div>
+		<div class="more-news"><a href="AllWatchOutNews.aspx" rel="facebox[.WatchOutNews]">More News</a></div>		</div>
 		<div class="blue-box-bottom-home-page"></div>
 	  </div>
 <!--....box-1....-->	

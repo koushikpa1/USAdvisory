@@ -1897,7 +1897,13 @@ border-right:1px #c8c8c8 solid;
 text-align:center;
 padding-bottom:5px;
 }
-
+.popupHeader
+{
+    font-size: 1.3em; 
+    font-weight: bold;
+    background:url(../images/grey-header.jpg);
+    text-align:center;
+}
 #color-white
 {
 color:#FFFFFF;
@@ -1992,7 +1998,14 @@ margin-top:8px;
 margin-left:65px;
 margin-right:5px;
 }
-
+.justifyText
+{
+    text-align:justify;
+}
+.separator
+{
+    background:url(../images/divider.jpg);
+}
 
 
 
