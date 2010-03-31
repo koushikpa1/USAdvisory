@@ -11,9 +11,9 @@ C:\Users\ChinniAnvi\Documents\Visual Studio 2008\Projects\USAdvisory\DStreet.USA
 C:\Users\ChinniAnvi\Documents\Visual Studio 2008\Projects\USAdvisory\DStreet.USAdvisory.Business\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
 C:\Users\ChinniAnvi\Documents\Visual Studio 2008\Projects\USAdvisory\DStreet.USAdvisory.Business\obj\Debug\DStreet.USAdvisory.Business.dll
 C:\Users\ChinniAnvi\Documents\Visual Studio 2008\Projects\USAdvisory\DStreet.USAdvisory.Business\obj\Debug\DStreet.USAdvisory.Business.pdb
+C:\Development\DStreet.USAdvisory.Business\bin\Debug\DStreet.USAdvisory.Business.dll.config
 C:\Development\DStreet.USAdvisory.Business\bin\Debug\DStreet.USAdvisory.Business.dll
 C:\Development\DStreet.USAdvisory.Business\bin\Debug\DStreet.USAdvisory.Business.pdb
 C:\Development\DStreet.USAdvisory.Business\obj\Debug\ResolveAssemblyReference.cache
 C:\Development\DStreet.USAdvisory.Business\obj\Debug\DStreet.USAdvisory.Business.dll
 C:\Development\DStreet.USAdvisory.Business\obj\Debug\DStreet.USAdvisory.Business.pdb
-C:\Development\DStreet.USAdvisory.Business\bin\Debug\DStreet.USAdvisory.Business.dll.config

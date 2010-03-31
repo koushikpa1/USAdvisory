@@ -64,7 +64,7 @@ namespace DStreet.USAdvisory.Business.UI.Markets.NewsViews.DAL
            {
                //DB Connection goes here
 
-               NewsAndViews _newsViewsListing = new NewsAndViews();
+               NewsAndViews _newsviewsListing = new NewsAndViews();
 
                // Create the Database object, using the default database service. The
                // default database service is determined through configuration.
@@ -83,19 +83,16 @@ namespace DStreet.USAdvisory.Business.UI.Markets.NewsViews.DAL
 
                // Note: connection was closed by ExecuteDataSet method call 
 
-               foreach (DataRow dr in commentaryDataSet.Tables[0].Rows)
-               {
-                   NewsAndViews _newsviewsListing = new NewsAndViews();
-                   _newsviewsListing.ArticleId = Int32.Parse(dr["NewsId"].ToString());
-                   _newsviewsListing.ArticleTitle = dr["NewsTitle"].ToString();
-                   _newsviewsListing.ArticleDesc = dr["NewsDescription"].ToString();
-                   _newsviewsListing.ArticleDate = DateTime.Parse(dr["Newsdatetime"].ToString());
-                   _newsviewsListing.Ticker = dr["Ticker"].ToString();
-                   _newsviewsListing.IsPaid = bool.Parse(dr["IsPaid"].ToString());
+               DataRow dr = commentaryDataSet.Tables[0].Rows[0];              
                    
-               }
+               _newsviewsListing.ArticleId = Int32.Parse(dr["NewsId"].ToString());
+               _newsviewsListing.ArticleTitle = dr["NewsTitle"].ToString();
+               _newsviewsListing.ArticleDesc = dr["NewsDescription"].ToString();
+               _newsviewsListing.ArticleDate = DateTime.Parse(dr["Newsdatetime"].ToString());
+               _newsviewsListing.Ticker = dr["Ticker"].ToString();
+               _newsviewsListing.IsPaid = bool.Parse(dr["IsPaid"].ToString());
 
-               return _newsViewsListing;
+               return _newsviewsListing;
            }
 
        }
