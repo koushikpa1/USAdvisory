@@ -52,7 +52,7 @@
     facebox_html  : '\
   <div id="facebox" style="display:none;"> \
     <div class="popup"> \
-      <table> \
+      <table id="faceboxContentTable"> \
         <tbody> \
           <tr> \
             <td class="tl"/><td class="b"/><td class="tr"/> \
@@ -88,7 +88,7 @@
 
     var pageScroll = $.facebox.getPageScroll()
     $('#facebox').css({
-      top:	pageScroll[1] + ($.facebox.getPageHeight() / 10),
+      top:	pageScroll[1] + ($.facebox.getPageHeight() / 2),
       left:	pageScroll[0]
     }).show()
 
