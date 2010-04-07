@@ -5,13 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class controls_Advertisements : System.Web.UI.UserControl
+public partial class MemberZone : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
-        string lavada = "lavada";
-
 
     }
 }
