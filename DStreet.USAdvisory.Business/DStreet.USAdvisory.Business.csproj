@@ -110,6 +110,8 @@
     <Compile Include="Security\AdminSecurity.cs" />
     <Compile Include="Security\DAL\SecurityDAL.cs" />
     <Compile Include="Security\UserSecurity.cs" />
+    <Compile Include="UI\Subscription\SubscriptionLookup.cs" />
+    <Compile Include="UI\Subscription\SubscriptionLookupDAL.cs" />
     <Compile Include="UI\Markets\Commentary\DAL\commentaryUIDAL.cs" />
     <Compile Include="UI\Markets\Commentary\MarketCommentary.cs" />
     <Compile Include="UI\Markets\EmailNewsletter\DAL\emailnewsletterdal.cs" />

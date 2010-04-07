@@ -8,6 +8,13 @@ color:#000000;
 margin:0px;
 }
 
+.textbox {
+		background-image: url(images/bg.png);
+	border: 1px solid #6297BC;
+	width: 180px;
+}
+
+
 h1
 {
 font-family:Arial, Helvetica, sans-serif;
@@ -1539,7 +1546,7 @@ margin-top:10px;
 .register-button
 {
 background:url(../images/button-blue.jpg) no-repeat;
-width:59px;
+width:100px;
 height:30px;
 float:right;
 margin-left:10px;
