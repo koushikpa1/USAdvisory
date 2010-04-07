@@ -9,7 +9,7 @@
         <ItemTemplate>
         <tr>
         <td>
-        <span style="text-align:justify"><img src="images/bullet-black.jpg" />
+        <span class="justifyText"><img src="images/bullet-black.jpg" />
        <b><%# DataBinder.Eval(Container.DataItem, "ArticleDate", "{0:HH:mm}")%> - <%# DataBinder.Eval(Container.DataItem, "ArticleTitle")%></b>
         <%# DataBinder.Eval(Container.DataItem, "ArticleDesc")%></span>
         </td>
