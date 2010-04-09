@@ -110,8 +110,6 @@
     <Compile Include="Security\AdminSecurity.cs" />
     <Compile Include="Security\DAL\SecurityDAL.cs" />
     <Compile Include="Security\UserSecurity.cs" />
-    <Compile Include="UI\Subscription\SubscriptionLookup.cs" />
-    <Compile Include="UI\Subscription\SubscriptionLookupDAL.cs" />
     <Compile Include="UI\Markets\Commentary\DAL\commentaryUIDAL.cs" />
     <Compile Include="UI\Markets\Commentary\MarketCommentary.cs" />
     <Compile Include="UI\Markets\EmailNewsletter\DAL\emailnewsletterdal.cs" />
@@ -120,6 +118,8 @@
     <Compile Include="UI\Markets\NewsViews\NewsAndViews.cs" />
     <Compile Include="UI\Markets\WatchOut\DAL\watchoutDAL.cs" />
     <Compile Include="UI\Markets\WatchOut\WatchOutNews.cs" />
+    <Compile Include="UI\Performances\DAL\PerformanceDAL.cs" />
+    <Compile Include="UI\Performances\Performances.cs" />
     <Compile Include="UI\Portfolio\DAL\portfolioDAL.cs" />
     <Compile Include="UI\Portfolio\IPortfolio.cs" />
     <Compile Include="UI\Portfolio\VirtualPortfolio.cs" />
@@ -127,6 +127,8 @@
     <Compile Include="UI\PremiumServices\DAL\premiumservicesDAL.cs" />
     <Compile Include="UI\PremiumServices\PremiumServices.cs" />
     <Compile Include="UI\PremiumServices\TradingType.cs" />
+    <Compile Include="UI\Subscription\SubscriptionLookup.cs" />
+    <Compile Include="UI\Subscription\SubscriptionLookupDAL.cs" />
     <Compile Include="UI\Users\Users.cs" />
     <Compile Include="UI\Users\DAL\UsersDAL.cs" />
     <Compile Include="UI\Users\IUser.cs" />
@@ -137,6 +139,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\DStreet.USAdvisory.Business.dll" />
+    <Content Include="bin\Debug\DStreet.USAdvisory.Business.pdb" />
+    <Content Include="obj\Debug\DStreet.USAdvisory.Business.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\DStreet.USAdvisory.Business.dll" />
+    <Content Include="obj\Debug\DStreet.USAdvisory.Business.pdb" />
+    <Content Include="obj\Debug\Refactor\DStreet.USAdvisory.Business.dll" />
+    <Content Include="obj\Debug\TempPE\USAdvisoryDataSet.Designer.cs.dll" />
     <Content Include="UI_Storeprocs.txt" />
   </ItemGroup>
   <ItemGroup>

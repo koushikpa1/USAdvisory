@@ -14,6 +14,66 @@
 <!--............inner-middle..........-->
 <div class="inner-page-mid-block">
  <h1>Member Zone</h1>
+    <p>&nbsp;</p>
+
+ <table width="100%" border="0" cellspacing="0" cellpadding="0" > 
+  <tr> 
+    
+    <td ><img src="images/border-top.jpg" /></td> 
+  </tr> 
+  <tr> 
+    <td class="line-middle"> 
+	 <table width="548"> 
+	   <tr> 
+	   <td width="15"><img src="images/bullet-black.jpg" align="top" /></td> 
+	   <td width="285"><a href="DayTradingSwingTrading.aspx" class="blue-color">Day &amp; Swing Trading </a></td> 
+	   <td width="232"><asp:Label ID="lblDayTrade" runat="server"></asp:Label></td> 
+	   </tr></table> 
+	</td> 
+    </tr> 
+	
+	<tr> 
+    <td class="line-middle"> 
+	<table width="550"> 
+	  <tr> 
+	   <td width="14"><img src="images/bullet-black.jpg" align="top" /></td> 
+	  <td width="286"><a href="ValueInvesting.aspx" class="blue-color">Value Investing </a></td> 
+	<td width="234" ><asp:Label ID="lblValueInvesting" runat="server"></asp:Label></td> 
+	</tr></table> 
+	</td> 
+    </tr> 
+	
+	<tr> 
+    <td class="line-middle"> 
+	<table width="549"> 
+	  <tr> 
+	   <td width="15"><img src="images/bullet-black.jpg" align="top" /></td> 
+	  <td width="284"><a href="PennyStocks.aspx" class="blue-color"> Penny Stocks </a></td> 
+	<td width="234"><asp:Label ID="lblPennyStocks" runat="server"></asp:Label></td> 
+	</tr></table> 
+	</td> 
+    </tr> 
+	
+	<tr> 
+    <td class="line-middle"> 
+	<table width="549"> 
+	  <tr> 
+	   <td width="15"><img src="images/bullet-black.jpg" align="top" /></td> 
+	  <td width="285"><a href="VirtualPortfolio.aspx" class="blue-color">Virtual Portfolio </a></td> 
+	<td width="233"><asp:Label ID="lblVirtualPortfolio" runat="server"></asp:Label></td> 
+	</tr></table> 
+	</td> 
+    </tr> 
+	
+     
+	<tr><td class="line-middle-1">&nbsp;</td> 
+	</tr> 
+	 
+  <tr> 
+    <td ><img src="images/border-bottom.jpg" /></td> 
+  </tr> 
+</table> 
+ 
 </div>
 <!--............inner-middle..........-->
 
@@ -23,5 +83,7 @@
 <div class="add"><img src="images/add-2.jpg" alt="What If You"  /></div>
 <div class="add"><img src="images/add-3.jpg" alt="E Trade"  /></div>
 </div>
+ <div class="clear-div">
+            </div>
 </div>
 </asp:Content>

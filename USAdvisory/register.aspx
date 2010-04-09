@@ -33,7 +33,7 @@
                         "<%=txtconfirmUserId.UniqueID %>": {
                             required: true,
                             minlength: 2,
-                            equalTo: "#txtUserId"
+                            equalTo: "input[name='<%=txtUserId.UniqueID %>']"
                         },
                         "<%=txtPhoneNumber.UniqueID %>": {
                             required: true,
@@ -48,7 +48,7 @@
                         "<%=txtConfirmPassword.UniqueID %>": {
                         required: true,
                         //equalTo: $('#<%= txtPassword.UniqueID %>').valueOf()
-                        equalTo: "#txtPassword"
+                        equalTo: "input[name='<%=txtPassword.UniqueID %>']"
                         }
                     },
                     messages: {

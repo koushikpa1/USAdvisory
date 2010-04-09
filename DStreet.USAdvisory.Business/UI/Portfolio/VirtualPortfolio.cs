@@ -106,6 +106,14 @@ namespace DStreet.USAdvisory.Business.UI.Portfolio
            set { _isPartiallyExited = value; }
        }
 
+       private string _BuyOrSell;
+
+       public string BuyOrSell
+       {
+           get { return _BuyOrSell; }
+           set { _BuyOrSell = value; }
+       }
+
        #region IPortfolio Members
 
        private int _stockTransactionId;

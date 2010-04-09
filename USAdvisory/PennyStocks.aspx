@@ -7,121 +7,102 @@
 <%@ Register Src="Controls/Advertisements.ascx" TagName="Advertisements" TagPrefix="Advertisements_uc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
-      <html>
-    <body>
-    
+  
+  <Header_uc:Header ID="header" runat="server" />
+  
+  <form id="Form1" runat="server">
+    <asp:ScriptManager ID="smDefault" runat="Server">
+    </asp:ScriptManager>
+    <div class="main-block">
     <div class="content-block">
 
   
 <!--............inner-middle..........-->
 <div class="inner-page-mid-block-1">
- <h1 class="blue-color" id="heading-margin">Day &amp; Swing Trading</h1>
+ <h1 class="blue-color" id="heading-margin">Penny Stocks</h1>
  <br />
-<table border="0" cellspacing="0" cellpadding="0">
-   
-   <tr>
-   <td colspan="2"><img src="images/blue-strip-up.jpg" /></td>
-   </tr>
-   
-   <tr>
-   <td class="blue-strip" width="124" style="color:#FFFFFF">Nov 10-1-2010</td>
-   <td class="grey-strip" width="558">
-   <table><tr><td width="282">Ticker: Description: Update:</td>
-   <td width="160">Entry:</td>
-   <td width="71">Exit</td>
-   </tr></table>
-   </td>
-   </tr>
-   
-   <tr>
-   <td class="blue-strip" width="124" style="color:#FFFFFF">Nov 10-1-2010</td>
-   <td class="grey-strip" width="558">
-   <table><tr><td width="282">Ticker: Description: Update:</td>
-   <td width="160">Entry:</td>
-   <td width="71">Exit</td>
-   </tr></table>
-   </td>
-   </tr>
-   
-   <tr>
-   <td class="blue-strip" width="124" style="color:#FFFFFF">Nov 10-1-2010</td>
-   <td class="grey-strip" width="558">
-   <table><tr><td width="282">Ticker: Description: Update:</td>
-   <td width="160">Entry:</td>
-   <td width="71">Exit</td>
-   </tr></table>
-   </td>
-   </tr>
-   
-   <tr>
-   <td class="blue-strip-1" width="124" style="color:#FFFFFF">Nov 10-1-2010</td>
-   <td class="grey-strip-1" width="558">
-   <table><tr><td width="282">Ticker: Description: Update:</td>
-   <td width="160">Entry:</td>
-   <td width="71">Exit</td>
-   </tr></table>
-   </td>
-   </tr>
-
-    <td colspan="2"><img src="images/day-trading-down.jpg" /></td>
-  </tr>
-  
-</table>
+<div style="border-style: ridge">
+<!--GridView Goes Here-->
+<asp:UpdatePanel ID="UpdatePanel1" runat="server">
+<ContentTemplate >
+  <asp:GridView ID="GridView_PennyStocks" runat="server" CellPadding="4" ForeColor="#333333" 
+        GridLines="None" AutoGenerateColumns="False"  >
+        <Columns>
+        
+            <asp:BoundField DataField="ArticleDate" HeaderText="ArticleDate" SortExpression="ArticleDate"
+                DataFormatString="{0:dd-MM-yyyy}" HeaderStyle-Width="100" ItemStyle-HorizontalAlign="Center"/>
+            <asp:BoundField DataField="Ticker" HeaderText="Ticker" SortExpression="Ticker" HeaderStyle-Width="100" ItemStyle-HorizontalAlign="Center" />
+            <asp:hyperlinkfield headertext="ArticleTitle"
+            datatextfield="ArticleTitle"
+            datanavigateurlformatstring="javascript:alert('Yet to Implement');"
+            datanavigateurlfields="ArticleID" HeaderStyle-Width="450" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="450" />
+            
+        </Columns>
+        <RowStyle BackColor="#EFF3FB" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <EditRowStyle BackColor="#2461BF" />
+        <AlternatingRowStyle BackColor="White" />
+    </asp:GridView>
+</ContentTemplate>
+</asp:UpdatePanel>
+</div>
 
 </div>
 <!--............inner-middle..........-->
 
-<div class="content-block-right-1">
-<table border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td class="grey-top"><h1 style="margin-top:4px; margin-left:10px;">Archives</h1></td>
-  </tr>
-  
-  <tr>
-    <td class="grey-gradiant">
-	<table><tr><td width="135">Tiker Description</td>
-	<td width="81">Entry</td>
-	<td width="35">Exit</td>
-	</tr></table>
-	</td>
-  </tr>
-  
-  <tr>
-    <td class="grey-gradiant">
-	<table><tr><td width="135">Tiker Description</td>
-	<td width="81">Entry</td>
-	<td width="35">Exit</td>
-	</tr></table>
-	</td>
-  </tr>
-  
-  <tr>
-    <td class="grey-gradiant">
-	<table><tr><td width="135">Tiker Description</td>
-	<td width="81">Entry</td>
-	<td width="35">Exit</td>
-	</tr></table>
-	</td>
-  </tr>
-  
-  <tr>
-    <td class="grey-gradiant-1">
-	<table><tr><td width="135">Tiker Description</td>
-	<td width="81">Entry</td>
-	<td width="35">Exit</td>
-	</tr></table>
-	</td>
-  </tr>
-  
-  <tr><td><img src="images/grey-bottom.jpg" /></td></tr>
-  
-</table>
-
+<div class="content-block-right-1" style="border-style: ridge">
+<!--Archive goes Here-->
+<h1 class="blue-color" id="h1">Archives</h1>
+ <br />
+<asp:UpdatePanel ID="UpdatePanel2" runat="server">
+<ContentTemplate >
+  <asp:GridView ID="GridViewArchive_PennyStocks" runat="server" CellPadding="4" ForeColor="#333333" 
+        GridLines="None" AutoGenerateColumns="False" AllowPaging="True" 
+        OnPageIndexChanging="ArchivePageIndexChanging"  >
+        <Columns>
+        
+            <asp:BoundField DataField="ArticleDate" HeaderText="ArticleDate" SortExpression="ArticleDate"
+                DataFormatString="{0:dd-MM-yyyy}" HeaderStyle-Width="100" 
+                ItemStyle-HorizontalAlign="Center"  >
+                <HeaderStyle Width="100px" />
+                <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Ticker" HeaderText="Ticker" SortExpression="Ticker" 
+                HeaderStyle-Width="100" ItemStyle-HorizontalAlign="Center" >
+                <HeaderStyle Width="100px" />
+                <ItemStyle HorizontalAlign="Center" />
+            </asp:BoundField>
+            <asp:hyperlinkfield headertext="ArticleTitle"
+            datatextfield="ArticleTitle"
+            datanavigateurlformatstring="javascript:alert('Yet to Implement');"
+            datanavigateurlfields="ArticleID" HeaderStyle-Width="120" 
+                ItemStyle-HorizontalAlign="Center" >
+            
+                <HeaderStyle Width="120px" />
+                <ItemStyle HorizontalAlign="Center" />
+            </asp:hyperlinkfield>
+            
+        </Columns>
+        <RowStyle BackColor="#EFF3FB" />
+        <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
+        <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+        <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
+        <EditRowStyle BackColor="#2461BF" />
+        <AlternatingRowStyle BackColor="White" />
+    </asp:GridView>
+</ContentTemplate>
+</asp:UpdatePanel>
 </div>
 </div>
-</body>
-    </html>
+    <div class="clear-div"></div>
+</div>
+</div>
+</form>
 </asp:Content>
+
 
 

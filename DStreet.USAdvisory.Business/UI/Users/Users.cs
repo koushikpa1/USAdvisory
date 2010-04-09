@@ -117,6 +117,16 @@ namespace DStreet.USAdvisory.Business.UI.Users
             UsersDAL.AddUser(this, SubscriptionStartDate, SubscriptionEndDate);
         }
 
+        public bool UpdatePassword(string username, string oldPasswd, string newPasswd )
+        {
+           return UsersDAL.UpdatePassword(username, oldPasswd, newPasswd);
+        }
+
+        public bool UpdateMobileNo(string username, string oldNumber, string newNumber)
+        {
+           return UsersDAL.UpdateMobileNumber(username, oldNumber, newNumber);
+        }
+
 
         #region IUser Members
 

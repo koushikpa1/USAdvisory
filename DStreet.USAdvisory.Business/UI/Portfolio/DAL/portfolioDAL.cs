@@ -23,7 +23,7 @@ namespace DStreet.USAdvisory.Business.UI.Portfolio.DAL
                // default database service is determined through configuration.
                Database db = DatabaseFactory.CreateDatabase();
 
-               string sqlCommand = "GetAllPortfolio";
+               string sqlCommand = "UI_GetAllPortfolio";
                DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
 
                // Retrieve products from the specified category.
@@ -55,6 +55,7 @@ namespace DStreet.USAdvisory.Business.UI.Portfolio.DAL
                    _portfoliolisting.UpdateDateTime = DateTime.Parse(dr["UpdateDateTime"].ToString());
                    _portfoliolisting.BuyOrSellId = Int32.Parse(dr["BuyOrSellId"].ToString());
                    _portfoliolisting.CompanyName = dr["CompanyName"].ToString();
+                   _portfoliolisting.BuyOrSell = dr["BuyOrSell"].ToString();
                    _article.Add(_portfoliolisting);
                }
 

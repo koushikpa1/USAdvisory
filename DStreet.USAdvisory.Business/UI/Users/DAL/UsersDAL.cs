@@ -46,5 +46,76 @@ namespace DStreet.USAdvisory.Business.UI.Users.DAL
                 connection.Close();
             }
         }
+
+
+        public static bool UpdatePassword( string userID, string oldPasswd, string NewPassword)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+
+            string sqlCommand = "UpdateUserPassword";
+            DbCommand commentaryCommand = db.GetStoredProcCommand(sqlCommand);
+
+            // GlobalFunctions.GetCurrentTimeInEST()
+
+            db.AddInParameter(commentaryCommand, "UserId", DbType.String, userID);
+            db.AddInParameter(commentaryCommand, "OldPassword", DbType.String, oldPasswd);
+            db.AddInParameter(commentaryCommand, "NewPassword", DbType.String, NewPassword);
+            
+
+            using (DbConnection connection = db.CreateConnection())
+            {
+                connection.Open();
+              
+                int IsUpdated = db.ExecuteNonQuery(commentaryCommand);
+                connection.Close();
+                if (IsUpdated == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+
+                }
+
+            }
+
+        }
+
+        public static bool UpdateMobileNumber(string userID, string oldNumber, string NewNumber)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+
+            string sqlCommand = "UpdateUserMobileNo";
+            DbCommand commentaryCommand = db.GetStoredProcCommand(sqlCommand);
+
+            // GlobalFunctions.GetCurrentTimeInEST()
+
+            db.AddInParameter(commentaryCommand, "UserId", DbType.String, userID);
+            db.AddInParameter(commentaryCommand, "OldNumber", DbType.String, oldNumber);
+            db.AddInParameter(commentaryCommand, "NewNumber", DbType.String, NewNumber);
+
+
+            using (DbConnection connection = db.CreateConnection())
+            {
+                connection.Open();
+                
+                int IsUpdated = db.ExecuteNonQuery(commentaryCommand);
+                
+                connection.Close();
+                if (IsUpdated == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+
+                }
+
+            }
+
+        }
+
     }
 }

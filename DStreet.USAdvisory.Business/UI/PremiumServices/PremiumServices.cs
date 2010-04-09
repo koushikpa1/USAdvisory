@@ -122,9 +122,25 @@ namespace DStreet.USAdvisory.Business.UI.PremiumServices
             return premiumservicesDAL.GetPremiumServicesByTradingType(Int32.Parse(tradingType.ToString()));
         }
 
+        public List<PremiumServices> GetPremiumServicesUI(int tradingType)
+        {
+            return premiumservicesDAL.GetPremiumServicesByTradingType(tradingType);
+        }
+
+
+        public List<PremiumServices> GetLatestPremiumServicesUI(int tradingType)
+        {
+            return premiumservicesDAL.GetLatestPremiumServicesByTradingType(tradingType);
+        }
+
         public PremiumServices GetPremiumServicesByArticle(int _articleId)
         {
             return premiumservicesDAL.GetPremiumServicesByArticle(_articleId);
+        }
+
+        public int GetPremiumServicesArticleCount(int _TradeType)
+        {
+            return premiumservicesDAL.GetPremiumServicesArticleCount(_TradeType);
         }
 
 
