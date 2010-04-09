@@ -17,3 +17,9 @@ C:\Development\DStreet.USAdvisory.Business\bin\Debug\DStreet.USAdvisory.Business
 C:\Development\DStreet.USAdvisory.Business\obj\Debug\ResolveAssemblyReference.cache
 C:\Development\DStreet.USAdvisory.Business\obj\Debug\DStreet.USAdvisory.Business.dll
 C:\Development\DStreet.USAdvisory.Business\obj\Debug\DStreet.USAdvisory.Business.pdb
+C:\Documents and Settings\karthik\Desktop\Dev\Karthik\DStreet.USAdvisory.Business\bin\Debug\DStreet.USAdvisory.Business.dll.config
+C:\Documents and Settings\karthik\Desktop\Dev\Karthik\DStreet.USAdvisory.Business\bin\Debug\DStreet.USAdvisory.Business.dll
+C:\Documents and Settings\karthik\Desktop\Dev\Karthik\DStreet.USAdvisory.Business\bin\Debug\DStreet.USAdvisory.Business.pdb
+C:\Documents and Settings\karthik\Desktop\Dev\Karthik\DStreet.USAdvisory.Business\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\karthik\Desktop\Dev\Karthik\DStreet.USAdvisory.Business\obj\Debug\DStreet.USAdvisory.Business.dll
+C:\Documents and Settings\karthik\Desktop\Dev\Karthik\DStreet.USAdvisory.Business\obj\Debug\DStreet.USAdvisory.Business.pdb

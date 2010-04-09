@@ -8,7 +8,7 @@ namespace DStreet.USAdvisory.Business.UI.PremiumServices
     public enum TradingType
     {
         DAYTRADING = 1,
-        SWINGTRADING,
+        SWINGTRADING ,
         VALUEINVESTING,
         PENNYSTOCKS
     }

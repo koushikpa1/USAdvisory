@@ -18,5 +18,6 @@ namespace DStreet.USAdvisory.Business.UI.Portfolio
         DateTime UpdateDateTime { get; set; }
         string Updates { get; set; }
         int Qty { get; set; } 
+        string BuyOrSell { get; set; }
     }
 }

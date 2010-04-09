@@ -23,7 +23,7 @@ public partial class QueryCorner : System.Web.UI.Page
         string userID = txtUserID.Text;
         int value = Convert.ToInt32(ddQueryDomain.SelectedValue);
         string Query = txtQuery.Text;
-        sendEmail("karthik910@gmail.com", "Query From " + userID, Query);
+        sendEmail("suriya.ur@gmail.com", "Query From " + userID, Query);
 
 
     }
@@ -34,7 +34,7 @@ public partial class QueryCorner : System.Web.UI.Page
         {
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
             client.EnableSsl = true;
-            MailAddress from = new MailAddress("karthik910@gmail.com", "123");
+            MailAddress from = new MailAddress("uday_ramayanam@gmail.com", "123");
             MailAddress to = new MailAddress(aemailaddress, "Sas");
             MailMessage message = new MailMessage(from, to);
             message.Body = "This is a test e-mail message sent using gmail as a relay server ";
