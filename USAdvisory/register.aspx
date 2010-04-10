@@ -15,29 +15,34 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
+            jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+                phone_number = phone_number.replace(/\s+/g, "");
+                return this.optional(element) || phone_number.length > 9 &&
+		phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+            }, "Please specify a valid phone number");
+            
                 $("#<%=form1.ClientID%>").validate({
                     rules: {
                         "<%=txtFirstName.UniqueID %>": {
                             required: true,
-                            minlength: 2
+                            minlength: 3
                         },
                         "<%=txtLastName.UniqueID %>": {
                             required: true,
-                            minlength: 2
+                            minlength: 3
                         },
 
                         "<%=txtUserId.UniqueID %>": {
-                            required: true,
-                            minlength: 2
+                            required: true,                            
+                            email: true
                         },
                         "<%=txtconfirmUserId.UniqueID %>": {
-                            required: true,
-                            minlength: 2,
+                            required: true,                            
                             equalTo: "input[name='<%=txtUserId.UniqueID %>']"
                         },
                         "<%=txtPhoneNumber.UniqueID %>": {
-                            required: true,
-                            minlength: 2                            
+                            required: true,                            
+                            phoneUS: true                           
                         },
 
                         "<%=txtPassword.UniqueID %>": {
@@ -54,7 +59,9 @@
                     messages: {
                         "<%=txtFirstName.UniqueID %>": "Enter your First Name",
                         "<%=txtLastName.UniqueID %>": "Enter your Last Name",
-                        "<%=txtUserId.UniqueID %>": "Enter you User Id",
+                        "<%=txtUserId.UniqueID %>": {
+                        email: "Enter a valid email Id"
+                        },
                         "<%=txtconfirmUserId.UniqueID %>": {
                             required: "Please re enter your User Id",
                             equalTo: "The User ids do not match"
@@ -77,12 +84,13 @@
                 border: 1px dotted red;
             }
             label.error
-            {
+            {                
                 float: left;
                 color: red;
                 padding-left: .5em;
                 vertical-align: top;
             }
+           
         </style>
     </head>
     <body>
@@ -99,7 +107,7 @@
                         <form action="#" class="form-register">
                         <table width="320">
                             <tr>
-                                <td style="width: 40%">
+                                <td style="width: 40%" style="font-weight: bold">
                                     First Name: *
                                 </td>
                                 <td>
@@ -107,7 +115,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Last Name: *
                                 </td>
                                 <td>
@@ -115,7 +123,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     <label>
                                         User Id: *</label>
                                 </td>
@@ -124,7 +132,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Confirm User Id *:
                                 </td>
                                 <td>
@@ -132,7 +140,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Password: *
                                 </td>
                                 <td>
@@ -140,7 +148,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Confirm Password: *
                                 </td>
                                 <td>
@@ -148,7 +156,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Phone:
                                 </td>
                                 <td>
@@ -156,7 +164,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Address:
                                 </td>
                                 <td>
@@ -164,7 +172,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     State:
                                 </td>
                                 <td>
@@ -172,7 +180,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Country:
                                 </td>
                                 <td>
@@ -180,7 +188,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Zip:
                                 </td>
                                 <td>
