@@ -218,6 +218,7 @@
                             <%--<li><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></li>
                             <li class="bullet-margin-top"><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></li>--%>
                         </ul>
+                        
                     </div>
                     <div class="register-page-subscription-down">
                     </div>
