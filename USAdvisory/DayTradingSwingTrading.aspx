@@ -29,14 +29,20 @@
                         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                             <ContentTemplate>
                                 <asp:GridView ID="GridView_DaySwingTrading" runat="server" CellPadding="4" ForeColor="#333333"
-                                    GridLines="None" AutoGenerateColumns="False">
+                                    GridLines="None" AutoGenerateColumns="False" DataKeyNames="ArticleId">
                                     <Columns>
                                         <asp:BoundField DataField="ArticleDate" HeaderText="ArticleDate" SortExpression="ArticleDate"
                                             DataFormatString="{0:dd-MM-yyyy}" HeaderStyle-Width="100" ItemStyle-HorizontalAlign="Center" />
                                         <asp:BoundField DataField="Ticker" HeaderText="Ticker" SortExpression="Ticker" HeaderStyle-Width="100"
                                             ItemStyle-HorizontalAlign="Center" />
-                                        <asp:HyperLinkField HeaderText="ArticleTitle" DataTextField="ArticleTitle" DataNavigateUrlFormatString="javascript:alert('Yet to Implement');"
-                                            DataNavigateUrlFields="ArticleID" ItemStyle-Width="450" HeaderStyle-Width="450" ItemStyle-HorizontalAlign="Center" />
+                                        <asp:BoundField HeaderText="ArticleTitle" HeaderStyle-Width="450" ItemStyle-Width="450"
+                                        ItemStyle-HorizontalAlign="Center" />
+                                        <asp:TemplateField>
+                                            <ItemTemplate>
+                                                <a rel="#facebox" href='<%#Eval("ArticleId","ModalPopUp.aspx?Id={0}&TradeType=1")%>'>
+                                                    <img border="0" src="Images/mag_glass_icon.gif" alt="View" /></a>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
                                     </Columns>
                                     <RowStyle BackColor="#EFF3FB" />
                                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -60,7 +66,7 @@
                         <ContentTemplate>
                             <asp:GridView ID="GridViewArchive_DaySwingTrading" runat="server" CellPadding="4"
                                 ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" AllowPaging="True"
-                                OnPageIndexChanging="ArchivePageIndexChanging">
+                                OnPageIndexChanging="ArchivePageIndexChanging" DataKeyNames="ArticleId">
                                 <Columns>
                                     <asp:BoundField DataField="ArticleDate" HeaderText="ArticleDate" SortExpression="ArticleDate"
                                         DataFormatString="{0:dd-MM-yyyy}" HeaderStyle-Width="100" ItemStyle-HorizontalAlign="Center">
@@ -72,11 +78,19 @@
                                         <HeaderStyle Width="100px" />
                                         <ItemStyle HorizontalAlign="Center" />
                                     </asp:BoundField>
-                                    <asp:HyperLinkField HeaderText="ArticleTitle" DataTextField="ArticleTitle" DataNavigateUrlFormatString="javascript:alert('Yet to Implement');"
+                                    <asp:BoundField HeaderText="ArticleTitle" HeaderStyle-Width="450" ItemStyle-Width="450"
+                                        ItemStyle-HorizontalAlign="Center" />
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <a rel="#facebox" href='<%#Eval("ArticleId","ModalPopUp.aspx?Id={0}&TradeType=1")%>'>
+                                                <img border="0" src="Images/mag_glass_icon.gif" alt="View" /></a>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <%--<asp:HyperLinkField HeaderText="ArticleTitle" DataTextField="ArticleTitle" DataNavigateUrlFormatString="javascript:alert('Yet to Implement');"
                                         DataNavigateUrlFields="ArticleID" HeaderStyle-Width="120" ItemStyle-HorizontalAlign="Center">
                                         <HeaderStyle Width="120px" />
                                         <ItemStyle HorizontalAlign="Center" />
-                                    </asp:HyperLinkField>
+                                    </asp:HyperLinkField>--%>
                                 </Columns>
                                 <RowStyle BackColor="#EFF3FB" />
                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -90,11 +104,10 @@
                     </asp:UpdatePanel>
                 </div>
             </div>
-            <div class="clear-div"></div>
-</div>
-        
+            <div class="clear-div">
+            </div>
+        </div>
         </form>
-        
     </body>
     </html>
 </asp:Content>

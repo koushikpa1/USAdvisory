@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using DStreet.USAdvisory.Business.UI.PremiumServices;
 
 public partial class DayTradingSwingTrading : System.Web.UI.Page
-{
+{    
     protected void Page_Load(object sender, EventArgs e)
     {
         PremiumServices ps = new PremiumServices();

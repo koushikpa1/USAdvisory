@@ -7,10 +7,7 @@
 <table>
     <tr>
         <td class="justifyText">
-        
             <asp:label id="CommentaryDesc" runat="server"></asp:label>
-        
         </td>
     </tr>
 </table>
-

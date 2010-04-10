@@ -4,15 +4,15 @@
 <%@ Register Src="Controls/Header.ascx" TagName="Header" TagPrefix="Header_uc" %>
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
-        
     <Header_uc:Header ID="header" runat="server" />
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Untitled Page</title>
 
-<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
-<script type="text/javascript" src="../js/jquery.validate.js"></script>
+        <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+
+        <script type="text/javascript" src="../js/jquery.validate.js"></script>
+
         <script type="text/javascript">
             $(document).ready(function() {
                 $("#<%=form1.ClientID%>").validate({
@@ -37,18 +37,18 @@
                         },
                         "<%=txtPhoneNumber.UniqueID %>": {
                             required: true,
-                            minlength: 2
+                            minlength: 2                            
                         },
 
                         "<%=txtPassword.UniqueID %>": {
                             required: true
-                            
+
                         },
 
                         "<%=txtConfirmPassword.UniqueID %>": {
-                        required: true,
-                        //equalTo: $('#<%= txtPassword.UniqueID %>').valueOf()
-                        equalTo: "input[name='<%=txtPassword.UniqueID %>']"
+                            required: true,
+                            //equalTo: $('#<%= txtPassword.UniqueID %>').valueOf()
+                            equalTo: "input[name='<%=txtPassword.UniqueID %>']"
                         }
                     },
                     messages: {
@@ -72,23 +72,21 @@
         </script>
 
         <style type="text/css">
-           
             input.error
             {
                 border: 1px dotted red;
-            }          
+            }
             label.error
-            {               
-                float:  left;
+            {
+                float: left;
                 color: red;
                 padding-left: .5em;
-                vertical-align: top;                 
+                vertical-align: top;
             }
         </style>
-
     </head>
     <body>
-        <form id ="form1" runat="server" action="" method="get">
+        <form id="form1" runat="server" action="" method="get">
         <div class="content-block">
             <!--............inner-middle..........-->
             <div class="inner-page-mid-block">
@@ -99,9 +97,9 @@
                     </div>
                     <div class="register-box-middle">
                         <form action="#" class="form-register">
-                        <table width="320" >
+                        <table width="320">
                             <tr>
-                                <td style="width:40%">
+                                <td style="width: 40%">
                                     First Name: *
                                 </td>
                                 <td>
@@ -138,15 +136,15 @@
                                     Password: *
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtPassword" runat="server" CssClass="textbox" name="password"></asp:TextBox>
+                                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textbox" name="password"></asp:TextBox>
                                 </td>
-                            </tr>                            
+                            </tr>
                             <tr>
                                 <td>
                                     Confirm Password: *
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="textbox" name="confirmPassword"></asp:TextBox>
+                                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="textbox" name="confirmPassword"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -170,7 +168,7 @@
                                     State:
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtState" runat="server" CssClass="textbox"  name="state"></asp:TextBox>
+                                    <asp:TextBox ID="txtState" runat="server" CssClass="textbox" name="state"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -188,11 +186,12 @@
                                 <td>
                                     <asp:TextBox ID="txtZip" runat="server" CssClass="textbox" name="zip"></asp:TextBox>
                                 </td>
-                            </tr> 
+                            </tr>
                             <tr>
-                            <td><asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_OnClick" Text="Register" /></td>
-                            
-                            </tr>                           
+                                <td>
+                                    <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_OnClick" Text="Register" />
+                                </td>
+                            </tr>
                         </table>
                         </form>
                     </div>
@@ -218,9 +217,8 @@
                 <div class="register-captcha-box">
                     <cc1:CaptchaControl ID="ccJoin" runat="server" CaptchaBackgroundNoise="High" CaptchaLength="5"
                         CaptchaHeight="60" CaptchaWidth="200" CaptchaLineNoise="High" CaptchaMinTimeout="5"
-                        CaptchaMaxTimeout="240" />
-                    
-                    <asp:TextBox ID="txtCaptcha" runat="server"></asp:TextBox>
+                        CaptchaMaxTimeout="240" /> <br />
+                    <asp:TextBox ID="txtCaptcha" runat="server" CssClass="textbox"></asp:TextBox>
                     <%--<div class="register-captcha"></div>--%>
                 </div>
                 <%--<div class="register-button" onclick="btnRegister_OnClick" runat="server"><a href="#">Register</a></div>--%>
@@ -237,7 +235,7 @@
                 <div class="add">
                     <img src="images/add-3.jpg" alt="E Trade" /></div>
             </div>
-        </div>        
+        </div>
         </form>
     </body>
     </html>

@@ -16,21 +16,27 @@
             <!--............inner-middle..........-->
             <div class="inner-page-mid-block-1">
                 <h1 class="blue-color" id="heading-margin">
-                   Value Investing</h1>
+                    Value Investing</h1>
                 <br />
                 <div style="border-style: ridge">
                     <!--GridView Goes Here-->
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
                             <asp:GridView ID="GridView_ValueInvesting" runat="server" CellPadding="4" ForeColor="#333333"
-                                GridLines="None" AutoGenerateColumns="False">
+                                GridLines="None" AutoGenerateColumns="False" DataKeyNames="ArticleId">
                                 <Columns>
                                     <asp:BoundField DataField="ArticleDate" HeaderText="ArticleDate" SortExpression="ArticleDate"
                                         DataFormatString="{0:dd-MM-yyyy}" HeaderStyle-Width="100" ItemStyle-HorizontalAlign="Center" />
                                     <asp:BoundField DataField="Ticker" HeaderText="Ticker" SortExpression="Ticker" HeaderStyle-Width="100"
                                         ItemStyle-HorizontalAlign="Center" />
-                                    <asp:HyperLinkField HeaderText="ArticleTitle" DataTextField="ArticleTitle" DataNavigateUrlFormatString="javascript:alert('Yet to Implement');"
-                                        DataNavigateUrlFields="ArticleID" HeaderStyle-Width="450" ItemStyle-Width="450" ItemStyle-HorizontalAlign="Center" />
+                                    <asp:BoundField HeaderText="ArticleTitle" HeaderStyle-Width="450" ItemStyle-Width="450"
+                                        ItemStyle-HorizontalAlign="Center" />
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <a rel="#facebox" href='<%#Eval("ArticleId","ModalPopUp.aspx?Id={0}&TradeType=1")%>'>
+                                                <img border="0" src="Images/mag_glass_icon.gif" alt="View" /></a>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                                 <RowStyle BackColor="#EFF3FB" />
                                 <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -66,11 +72,14 @@
                                     <HeaderStyle Width="100px" />
                                     <ItemStyle HorizontalAlign="Center" />
                                 </asp:BoundField>
-                                <asp:HyperLinkField HeaderText="ArticleTitle" DataTextField="ArticleTitle" DataNavigateUrlFormatString="javascript:alert('Yet to Implement');"
-                                    DataNavigateUrlFields="ArticleID" HeaderStyle-Width="120" ItemStyle-HorizontalAlign="Center">
-                                    <HeaderStyle Width="120px" />
-                                    <ItemStyle HorizontalAlign="Center" />
-                                </asp:HyperLinkField>
+                                <asp:BoundField HeaderText="ArticleTitle" HeaderStyle-Width="450" ItemStyle-Width="450"
+                                    ItemStyle-HorizontalAlign="Center" />
+                                <asp:TemplateField>
+                                    <ItemTemplate>
+                                        <a rel="#facebox" href='<%#Eval("ArticleId","ModalPopUp.aspx?Id={0}&TradeType=1")%>'>
+                                            <img border="0" src="Images/mag_glass_icon.gif" alt="View" /></a>
+                                    </ItemTemplate>
+                                </asp:TemplateField>
                             </Columns>
                             <RowStyle BackColor="#EFF3FB" />
                             <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
