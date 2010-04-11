@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DStreetUS.master" AutoEventWireup="true"
-    CodeFile="DayTradingSwingTrading.aspx.cs" Inherits="DayTradingSwingTrading" %>
+    EnableViewState="true" CodeFile="DayTradingSwingTrading.aspx.cs" Inherits="DayTradingSwingTrading" %>
 
 <%@ Register Src="Controls/Header.ascx" TagName="Header" TagPrefix="Header_uc" %>
 <%@ Register Src="Controls/MarketToday.ascx" TagName="MarketToday" TagPrefix="MarketToday_uc" %>
@@ -8,13 +8,19 @@
 <%@ Register Src="Controls/Advertisements.ascx" TagName="Advertisements" TagPrefix="Advertisements_uc" %>
 <%-- Add content controls here --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
+    <script type="text/javascript" src="js/UI_MyAccount.js"></script>
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Query Corner</title>
+       
+        <script type="text/javascript">
+       
+        </script>
     </head>
     <body>
         <form runat="server">
+       
+        <Header_uc:Header ID="header" runat="server" />
         <asp:ScriptManager ID="smDefault" runat="Server">
         </asp:ScriptManager>
         <div class="main-block">

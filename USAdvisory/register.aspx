@@ -3,8 +3,7 @@
 
 <%@ Register Src="Controls/Header.ascx" TagName="Header" TagPrefix="Header_uc" %>
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cc1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">    
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Untitled Page</title>
@@ -15,12 +14,12 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-            jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
-                phone_number = phone_number.replace(/\s+/g, "");
-                return this.optional(element) || phone_number.length > 9 &&
+                jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+                    phone_number = phone_number.replace(/\s+/g, "");
+                    return this.optional(element) || phone_number.length > 9 &&
 		phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
-            }, "Please specify a valid phone number");
-            
+                }, "Please specify a valid phone number");
+
                 $("#<%=form1.ClientID%>").validate({
                     rules: {
                         "<%=txtFirstName.UniqueID %>": {
@@ -33,16 +32,16 @@
                         },
 
                         "<%=txtUserId.UniqueID %>": {
-                            required: true,                            
+                            required: true,
                             email: true
                         },
                         "<%=txtconfirmUserId.UniqueID %>": {
-                            required: true,                            
+                            required: true,
                             equalTo: "input[name='<%=txtUserId.UniqueID %>']"
                         },
                         "<%=txtPhoneNumber.UniqueID %>": {
-                            required: true,                            
-                            phoneUS: true                           
+                            required: true,
+                            phoneUS: true
                         },
 
                         "<%=txtPassword.UniqueID %>": {
@@ -60,7 +59,7 @@
                         "<%=txtFirstName.UniqueID %>": "Enter your First Name",
                         "<%=txtLastName.UniqueID %>": "Enter your Last Name",
                         "<%=txtUserId.UniqueID %>": {
-                        email: "Enter a valid email Id"
+                            email: "Enter a valid email Id"
                         },
                         "<%=txtconfirmUserId.UniqueID %>": {
                             required: "Please re enter your User Id",
@@ -84,17 +83,17 @@
                 border: 1px dotted red;
             }
             label.error
-            {                
+            {
                 float: left;
                 color: red;
                 padding-left: .5em;
                 vertical-align: top;
             }
-           
         </style>
     </head>
     <body>
         <form id="form1" runat="server" action="" method="get">
+        <Header_uc:Header ID="header1" runat="server" />
         <div class="content-block">
             <!--............inner-middle..........-->
             <div class="inner-page-mid-block">
@@ -144,7 +143,8 @@
                                     Password: *
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textbox" name="password"></asp:TextBox>
+                                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textbox"
+                                        name="password"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -152,7 +152,8 @@
                                     Confirm Password: *
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="textbox" name="confirmPassword"></asp:TextBox>
+                                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="textbox"
+                                        name="confirmPassword"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
@@ -218,7 +219,6 @@
                             <%--<li><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></li>
                             <li class="bullet-margin-top"><a href="#">Lorem ipsum dolor sit amet, consectetur.</a></li>--%>
                         </ul>
-                        
                     </div>
                     <div class="register-page-subscription-down">
                     </div>
@@ -226,7 +226,8 @@
                 <div class="register-captcha-box">
                     <cc1:CaptchaControl ID="ccJoin" runat="server" CaptchaBackgroundNoise="High" CaptchaLength="5"
                         CaptchaHeight="60" CaptchaWidth="200" CaptchaLineNoise="High" CaptchaMinTimeout="5"
-                        CaptchaMaxTimeout="240" /> <br />
+                        CaptchaMaxTimeout="240" />
+                    <br />
                     <asp:TextBox ID="txtCaptcha" runat="server" CssClass="textbox"></asp:TextBox>
                     <%--<div class="register-captcha"></div>--%>
                 </div>
@@ -247,6 +248,5 @@
         </div>
         </form>
     </body>
-    
     </html>
 </asp:Content>

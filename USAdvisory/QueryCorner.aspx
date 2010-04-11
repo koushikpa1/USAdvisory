@@ -7,7 +7,11 @@
 <%@ Register Src="Controls/MarketWatchOut.ascx" TagName="MarketWatchOut" TagPrefix="MarketWatchOut_uc" %>
 <%@ Register Src="Controls/Advertisements.ascx" TagName="Advertisements" TagPrefix="Advertisements_uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
+
+    <script type="text/javascript" src="js/UI_MyAccount.js"></script>
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Untitled Page</title>
@@ -18,7 +22,7 @@
 
         <script type="text/javascript">
             $(document).ready(function() {
-                $("#<%=Form1.ClientID%>").validate({
+            $("#<%=form1.ClientID%>").validate({
                     rules: {
                         "<%=txtUserID.UniqueID %>": {
                             required: true,
@@ -52,7 +56,9 @@
             }
         </style>
     </head>
-    <body>
+    <body onload="changeMenuColor('MemberZone')">
+    <form id="form1" runat="server">
+    <Header_uc:Header ID="header" runat="server" />
         <div>
             <!--..................top-block....................-->
             <!--..................content-block................-->
@@ -65,7 +71,7 @@
                                 Query</h2>
                         </div>
                         <div class="query-page-middle">
-                            <form id="Form1" runat="server">
+                          
                             <div>
                                 <table width="100%">
                                     <tr>
@@ -111,7 +117,7 @@
                                     </tr>
                                 </table>
                             </div>
-                            </form>
+                           
                         </div>
                         <div class="query-page-down">
                         </div>
@@ -131,6 +137,8 @@
             <div class="clear-div">
             </div>
         </div>
+        </form>
     </body>
+    
     </html>
 </asp:Content>

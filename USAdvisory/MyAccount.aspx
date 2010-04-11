@@ -84,9 +84,10 @@
             }
         </style>--%>
     </head>
-    <body>
-        <Header_uc:Header ID="header" runat="server" />
+    <body onload="changeMenuColor('MyAccount')">
+        
         <form id="form1" runat="server">
+        <Header_uc:Header ID="header" runat="server" />
         <div class="main-block">
             <!--..................content-block................-->
             <div class="content-block">

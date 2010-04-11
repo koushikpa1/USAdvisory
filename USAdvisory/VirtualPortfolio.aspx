@@ -9,12 +9,14 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%-- Add content controls here --%>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head runat="server">
-    </head>
-    <body>
+     <script type="text/javascript" src="js/UI_MyAccount.js"></script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head runat="server">
+   </head>
+    
+<body onload="changeMenuColor('MemberZone')">
         <form id="Form1" runat="server">
+		 <Header_uc:Header ID="header" runat="server" />
         <%--    <asp:ScriptManager ID="smDefault" runat="Server">
             </asp:ScriptManager>--%>
         <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">

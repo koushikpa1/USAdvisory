@@ -11,6 +11,22 @@ public partial class DayTradingSwingTrading : System.Web.UI.Page
 {    
     protected void Page_Load(object sender, EventArgs e)
     {
+        
+        if (Session["UserName"] != null)
+        {
+            Control control = header.FindControl("login");
+            Control logindiv = control.FindControl("ControlLogin");
+            Control welcomediv = control.FindControl("ControlUserInfo");
+            Label labelName = (Label)welcomediv.FindControl("lblWelcome");
+            labelName.Text = "Welcome " + (string)Session["UserName"] + "!";
+            logindiv.Visible = false;
+            welcomediv.Visible = true;
+           
+           
+            
+
+        }
+
         PremiumServices ps = new PremiumServices();
         List<PremiumServices> list = ps.GetLatestPremiumServicesUI(1);
 

@@ -5,8 +5,10 @@
 <%@ Register Src="Controls/MarketWatchOut.ascx" TagName="MarketWatchOut" TagPrefix="MarketWatchOut_uc" %>
 <%@ Register Src="Controls/Advertisements.ascx" TagName="Advertisements" TagPrefix="Advertisements_uc" %>
 <%-- Add content controls here --%>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
+ <Header_uc:Header ID="header" runat="server" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="marketToday"  runat="server">
 <MarketToday_uc:MarketToday ID="MarketToday" runat="server" />
@@ -20,3 +22,4 @@
 <asp:Content ID="Content5" ContentPlaceHolderID="advertisements"  runat="server">
 <Advertisements_uc:Advertisements ID="Advertisements" runat="server" />
 </asp:Content>
+

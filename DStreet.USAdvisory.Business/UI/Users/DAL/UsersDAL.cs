@@ -117,5 +117,81 @@ namespace DStreet.USAdvisory.Business.UI.Users.DAL
 
         }
 
+        public static Users getUserByUserID(string userID)
+        {
+             Users user = new Users();
+         
+
+            Database db = DatabaseFactory.CreateDatabase();
+
+            string sqlCommand = "UI_GetUserByUserID";
+            DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+
+            db.AddInParameter(dbCommand, "userID", DbType.String, userID);
+
+            // DataSet that will hold the returned results		
+            DataSet userDataset = null;
+
+            userDataset = db.ExecuteDataSet(dbCommand);
+
+            // Note: connection was closed by ExecuteDataSet method call 
+
+            if(userDataset.Tables[0].Rows.Count==1)
+            {
+               
+                DataRow dr = userDataset.Tables[0].Rows[0];
+                user.UserId = dr["UserId"].ToString();
+                user.FirstName = dr["FirstName"].ToString();
+                user.LastName = dr["LastName"].ToString();
+                user.SubscriptionEndDate =DateTime.Parse(dr["SubscriptionEndDate"].ToString());
+                user.SubscriptionStartDate = DateTime.Parse(dr["SubscriptionStartDate"].ToString());
+                user.IsPaidSubscriber = (bool)dr["IsPaidSubscriber"];
+               
+             }
+            return user ;
+
+           
+        }
+
+        public static bool IsAuthorizedUser(string userID, string password)
+        {
+
+             Database db = DatabaseFactory.CreateDatabase();
+
+            string sqlCommand = "UI_GetLoginInfo";
+            DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+
+            db.AddInParameter(dbCommand, "userID", DbType.String, userID);
+
+            // DataSet that will hold the returned results		
+            DataSet userDataset = null;
+
+            userDataset = db.ExecuteDataSet(dbCommand);
+
+            // Note: connection was closed by ExecuteDataSet method call 
+
+            if (userDataset.Tables[0].Rows.Count == 1)
+            {
+
+                DataRow dr = userDataset.Tables[0].Rows[0];
+                string uname = dr["UserId"].ToString();
+                string passwd = dr["Password"].ToString();
+
+                if (string.Compare(uname, userID, true)==0 && passwd == password)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

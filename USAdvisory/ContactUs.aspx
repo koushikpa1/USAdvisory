@@ -3,7 +3,7 @@
 
 <%@ Register Src="Controls/Header.ascx" TagName="Header" TagPrefix="Header_uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
+    
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Untitled Page</title>
@@ -54,8 +54,9 @@
             }
         </style>
     </head>
-    <body>
+    <body onload="changeMenuColor('ContactUs')">
         <form id="form1" runat="server">
+        <Header_uc:Header ID="header" runat="server" />
         <div>
             <div class="content-block">
                 <!--............inner-middle..........-->
@@ -122,6 +123,8 @@
                     <div class="add">
                         <img src="images/add-3.jpg" alt="E Trade" /></div>
                 </div>
+            </div>
+            <div class="clear-div">
             </div>
         </div>
         </form>

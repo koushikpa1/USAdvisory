@@ -20,3 +20,32 @@ function checkNewNo()
         }
 }
 
+ 
+function changeMenuColor(menuItem)
+{
+        
+        var MenuItems = ['current', 'MemberZone', 'MyAccount', 'Services','Performance','ContactUs'];
+        for (var i = 0; i < MenuItems.length; i++)
+        {
+
+            if (MenuItems[i] == menuItem) {
+                var item = document.getElementById(menuItem);
+                item.style.backgroundColor = '#3f87d1';
+            }
+            else {
+                var item = document.getElementById(MenuItems[i]);
+                item.style.backgroundColor = 'none';
+            }
+
+        }
+        if(menuItem=='MemberZone')
+        {
+                showSubMenu();
+        }
+}
+
+function showSubMenu()
+{
+       obj1=document.getElementById('subMenuDiv'); 
+       obj1.style.display = (obj1.style.display != "block") ? "block" : "none"; 
+}

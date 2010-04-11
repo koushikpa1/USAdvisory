@@ -6,9 +6,16 @@
 <%@ Register Src="Controls/MarketCommentary.ascx" TagName="MarketCommentary" TagPrefix="MarketCommentary_uc" %>
 <%@ Register Src="Controls/MarketWatchOut.ascx" TagName="MarketWatchOut" TagPrefix="MarketWatchOut_uc" %>
 <%@ Register Src="Controls/Advertisements.ascx" TagName="Advertisements" TagPrefix="Advertisements_uc" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
-    <form id="Form1" runat="server">
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+  <script type="text/javascript" src="js/UI_MyAccount.js"></script>
+<html><head></head>
+<body onload="changeMenuColor('MemberZone')">
+  
+  
+  <form id="Form1" runat="server">
+ 
+  <Header_uc:Header ID="header" runat="server" />
     <asp:ScriptManager ID="smDefault" runat="Server">
     </asp:ScriptManager>
     <div class="main-block">

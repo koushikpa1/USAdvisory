@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI.WebControls;
+using System.Web.UI;
 using System.Collections.Generic;
 using DStreet.USAdvisory.Business.UI.Performances;
 
@@ -7,7 +8,19 @@ public partial class Performance : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        var ps = new Performances();
+        if (Session["UserName"] != null)
+        {
+            Control control = header.FindControl("login");
+            Control logindiv = control.FindControl("ControlLogin");
+            Control welcomediv = control.FindControl("ControlUserInfo");
+            Label labelName = (Label)welcomediv.FindControl("lblWelcome");
+            labelName.Text = "Welcome " + (string)Session["UserName"] + "!";
+            logindiv.Visible = false;
+            welcomediv.Visible = true;
+        }
+
+
+        Performances ps = new Performances();
         List<Performances> list = ps.GetPerformances();
 
         GridView_Performance.DataSource = list;
