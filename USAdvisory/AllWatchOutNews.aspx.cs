@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DStreet.USAdvisory.Business.UI.Markets.WatchOut;
+using DStreet.USAdvisory.Business.UI.Users;
 
 public partial class AllWatchOutNews : System.Web.UI.Page
 {
@@ -18,5 +19,21 @@ public partial class AllWatchOutNews : System.Web.UI.Page
         watchOutRepeater.DataSource = listWatchOut;
         watchOutRepeater.DataBind();
 
+    }
+    protected string IsPaidNews(bool isPaidNews,string articleDesc,string articleTicker)
+    {
+        //TO DO: Need to get the current login user.
+        //Dummy data for the user. 
+        Users usr = new Users();
+        usr.IsPaidSubscriber= false;
+        if (isPaidNews)
+        {
+            if (usr.IsPaidSubscriber)
+                return articleDesc;
+            else
+                return "<p>" + articleTicker + "</P>";
+        }
+
+        return articleDesc;
     }
 }

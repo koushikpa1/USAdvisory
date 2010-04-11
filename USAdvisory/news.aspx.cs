@@ -9,18 +9,31 @@ using DStreet.USAdvisory.Business.UI.Markets.NewsViews;
 
 public partial class news : System.Web.UI.Page
 {
+    protected static string selectedArticleId = string.Empty;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if(this.Request.QueryString["SelId"] != null)
+        selectedArticleId = this.Request.QueryString["SelId"].ToString();
+       
         NewsAndViews newsAndViews = new NewsAndViews();
         List<NewsAndViews> listNewsAndViews = newsAndViews.GetAllNewsAndViews();
         gvNewsAndViews.DataSource = listNewsAndViews;
         gvNewsAndViews.DataBind();
 
         NewsAndViews newsDescription = new NewsAndViews();
-        newsDescription.ArticleId = 1;
+        if (!string.IsNullOrEmpty(selectedArticleId))
+        {
+            newsDescription.ArticleId = Convert.ToInt32(selectedArticleId);
+        }
+        else
+        {
+            newsDescription.ArticleId = listNewsAndViews[0].ArticleId;
+            gvNewsAndViews.Rows[0].BackColor = System.Drawing.Color.LightGray;
+        }
         NewsAndViews newsDescription1 = new NewsAndViews();
         newsDescription1 = newsDescription.GetAllNewsAndViewsById();
         lblArticleDes.Text = newsDescription1.ArticleDesc;
+        
             
     }
 
@@ -37,14 +50,21 @@ public partial class news : System.Web.UI.Page
     {
         if (args.Row.RowType == DataControlRowType.DataRow)
         {
+            
             NewsAndViews selNews = args.Row.DataItem as NewsAndViews;
-            args.Row.Attributes.Add("onClick", "userSelected('" + selNews.ArticleId + "')");
+            args.Row.ID = "RowID" + selNews.ArticleId;
+            args.Row.Attributes.Add("onClick", "userSelected('" + selNews.ArticleId + "','" + args.Row.ClientID + "','" + args.Row.Parent.ClientID + "')");
+            
+            if (!string.IsNullOrEmpty(selectedArticleId) && selNews.ArticleId.Equals(Convert.ToInt32(selectedArticleId)))
+                args.Row.BackColor = System.Drawing.Color.LightGray;
+            
         }
     }
 
     [System.Web.Services.WebMethod]
     public static string GetArticleDescription (int articleId)
     {
+                
         NewsAndViews newsDescription = new NewsAndViews();
         newsDescription.ArticleId = articleId;
         string desc = null;
