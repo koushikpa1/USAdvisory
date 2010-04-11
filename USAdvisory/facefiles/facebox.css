@@ -68,3 +68,12 @@
   overflow: hidden;
   padding: 0;
 }
+#facebox .scrollStyle {
+scrollbar-face-color:#657383;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-track-color:#98AFC7;
+scrollbar-shadow-color:'AliceBlue';
+scrollbar-highlight-color:'Beige';
+scrollbar-3dlight-color:'blue';
+scrollbar-darkshadow-Color:'';
+}

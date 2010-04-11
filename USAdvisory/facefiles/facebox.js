@@ -88,7 +88,7 @@
 
     var pageScroll = $.facebox.getPageScroll()
     $('#facebox').css({
-      top:	pageScroll[1] + ($.facebox.getPageHeight() / 2),
+      top:	pageScroll[1] + ($.facebox.getPageHeight() / 4),
       left:	pageScroll[0]
     }).show()
 

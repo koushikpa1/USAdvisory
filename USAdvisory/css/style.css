@@ -1921,6 +1921,8 @@ padding-bottom:5px;
     font-weight: bold;
     background:url(../images/grey-header.jpg);
     text-align:center;
+   margin-left:10px;
+    width:92%;
 }
 #color-white
 {
@@ -2077,7 +2079,7 @@ margin-right:5px;
 }      
 .grid .datatable .row:hover
 {
-	background-color:#B0E0E6;
+	/*background-color:#B0E0E6;*/
 	color:#000;
 }
 .grid .datatable .row TD.first { padding-left:10px; }
@@ -2209,6 +2211,26 @@ div.rounded div.bottom-outer div.bottom-inner div.bottom {
     font-size:.01em;
 }
 
+.scrollStyle
+{
+scrollbar-face-color:#657383;
+scrollbar-arrow-color:#FFFFFF;
+scrollbar-track-color:#98AFC7;
+scrollbar-shadow-color:'AliceBlue';
+scrollbar-highlight-color:'Beige';
+scrollbar-3dlight-color:'blue';
+scrollbar-darkshadow-Color:'';
+}
 
-
-
+.WatchOutNews
+{
+    height:400px;
+    overflow-y:scroll;
+    scrollbar-face-color:#657383;
+    scrollbar-arrow-color:#FFFFFF;
+    scrollbar-track-color:#98AFC7;
+    scrollbar-shadow-color:'AliceBlue';
+    scrollbar-highlight-color:'Beige';
+    scrollbar-3dlight-color:'blue';
+    scrollbar-darkshadow-Color:'';
+}

@@ -69,18 +69,41 @@
         </div>
  
  
-<div class="content-block-right-2">
+<div class="content-block-right-2" style="margin-left:70px;margin-top:4px;float:left">
 
 <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
-<asp:Label ID="lblArticleDes" runat="server" Width="100%" />
+<asp:Label ID="lblArticleDes"  BorderWidth="1" BorderColor="ActiveBorder" Height="422" Style="overflow-y:scroll;" CssClass="scrollStyle" runat="server" Width="100%" />
     </ContentTemplate></asp:UpdatePanel></div><div class="news-box-down"></div>
 </div>
 </div> 
 
 <script type="text/javascript" language="javascript">
-    function userSelected(userId) { 
-        PageMethods.GetArticleDescription(userId, CallSuccess);        
+    function userSelected(userId, selRowId, gridViewId) {
+        PageMethods.GetArticleDescription(userId, CallSuccess);
+
+        var gridView = document.getElementById(gridViewId);
+        //var rowCount = $('#myTable tr').length;
+        if (gridView != null) {
+
+            var rowCount = $('#' + gridViewId + ' tr').length;
+            for (var count = 1; count < rowCount; count++) {
+
+                    gridView.rows[count].style.backgroundColor = 'white';
+                    gridView.rows[count].style.className = 'hover first';
+                    //var idx = gridView.rows[count];
+                    //alert(idx);
+                    //gridView.rows[count].onmouseover = function(idx) { alert(idx); }
+                
+            }
+        }
+        var selRow = document.getElementById(selRowId);
+            if (selRow != null) {
+                selRow.style.backgroundColor = 'lightgray';
+            }
+
+            
+             
     }
 
     function CallSuccess(res) {
@@ -88,7 +111,10 @@
         obj.innerHTML = res;
     }
 
+    function selectedRow(gridselectedRow) {
 
+        gridselectedRow.style.backgroundColor = 'yellow';
+    }
 
 </script>
         </form>

@@ -37,7 +37,7 @@ function showSubMenu(subMenu)
 		  <div id="menu-content">
 		   <ul>
 		   <li class="blueline"></li>
-		   <li><a href="#" id="current">Home</a></li>
+		   <li><a href="Index.aspx" id="current">Home</a></li>
 		   <li class="blueline"></li>
 		    <li><a href="MemberZone.aspx" id="MemberZone" onclick="showSubMenu('MemberZone');">Member Zone</a></li>
 			<li class="blueline"></li>
