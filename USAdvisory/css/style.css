@@ -2051,6 +2051,7 @@ margin-right:5px;
 {
 	width:100%;
 	color:#666;
+	height:398px
 }        
 .grid .datatable TH
 {
@@ -2067,6 +2068,7 @@ margin-right:5px;
 	text-decoration:none;
 	padding-right:18px; 
 	color:#0066cc;
+	height:30px
 }
 .grid .datatable TH.sortasc A { background:url(../Images/asc.gif) right center no-repeat; }
 .grid .datatable TH.sortdesc A { background:url(../Images/desc.gif) right center no-repeat; }
@@ -2079,21 +2081,24 @@ margin-right:5px;
 }      
 .grid .datatable .row:hover
 {
-	/*background-color:#B0E0E6;*/
+	background-color:#B0E0E6;
 	color:#000;
 }
 .grid .datatable .row TD.first { padding-left:10px; }
-.grid .datatable TH.first { padding-left:10px; }
+.grid .datatable TH.first { padding-left:10px;height:30px }
 .grid .datatable .row:hover .first
 {
     background-repeat:no-repeat;   
 	background-image:url(../Images/bullet.gif);
 }  
 /* Data Pager Styles */
-.grid TR.pager-row TD
+.grid TR.pager-row
 {
-    border-top:solid 2px #bbd9ee;
+    border-top:solid 2px;
+    border-top-color:Navy;
+    height:25px
 }
+
 .grid .pager
 {
     font-family:arial,sans-serif;

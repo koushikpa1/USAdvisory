@@ -26,7 +26,7 @@
                         <div class="top-inner">
                             <div class="top">
                                 <h2>
-                                    News And Views</h2>
+                                    News</h2>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,8 @@
                                         <asp:GridView ID="gvNewsAndViews" runat="server" AutoGenerateColumns="False"
                                             AllowPaging="True" AllowSorting="True" CssClass="datatable" 
                                             CellPadding="0" BorderWidth="0px" OnRowDataBound="RowDataBound"   
-                                            GridLines="None" DataKeyNames="ArticleId" Width="300px" Height="400px" OnPageIndexChanging="gvPageIndexChanging">
+                                            GridLines="None" DataKeyNames="ArticleId" Width="300px" 
+                                            OnPageIndexChanging="gvPageIndexChanging"> 
                                             <PagerStyle CssClass="pager-row" />
                                             <RowStyle CssClass="row"/>
                                             <PagerSettings Mode="NumericFirstLast" PageButtonCount="7" FirstPageText="&#171;"
@@ -73,47 +74,34 @@
 
 <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
 <ContentTemplate>
-<asp:Label ID="lblArticleDes"  BorderWidth="1" BorderColor="ActiveBorder" Height="422" Style="overflow-y:scroll;" CssClass="scrollStyle" runat="server" Width="100%" />
+<asp:Label ID="lblArticleDes"  BorderWidth="1" BorderColor="ActiveBorder" Height="422" Style="overflow-y:scroll;" CssClass="scrollStyle justifyText" runat="server" Width="100%" />
     </ContentTemplate></asp:UpdatePanel></div><div class="news-box-down"></div>
 </div>
 </div> 
 
 <script type="text/javascript" language="javascript">
-    function userSelected(userId, selRowId, gridViewId) {
-        PageMethods.GetArticleDescription(userId, CallSuccess);
-
-        var gridView = document.getElementById(gridViewId);
-        //var rowCount = $('#myTable tr').length;
-        if (gridView != null) {
-
-            var rowCount = $('#' + gridViewId + ' tr').length;
-            for (var count = 1; count < rowCount; count++) {
-
-                    gridView.rows[count].style.backgroundColor = 'white';
-                    gridView.rows[count].style.className = 'hover first';
-                    //var idx = gridView.rows[count];
-                    //alert(idx);
-                    //gridView.rows[count].onmouseover = function(idx) { alert(idx); }
-                
-            }
-        }
-        var selRow = document.getElementById(selRowId);
-            if (selRow != null) {
-                selRow.style.backgroundColor = 'lightgray';
-            }
-
-            
+    function pageLoad(sender, args) {
+        $(document).ready(function() {
+        $('#<%=gvNewsAndViews.ClientID%> tr').css({ "Height": "45px" });
+            $('#<%=gvNewsAndViews.ClientID%> tr').click(function() {
+            $('#<%=gvNewsAndViews.ClientID%> tr').css({ "background-color": "white", "color": "black","Height": "45px"});
+            $(this).css({ "background-color": "#B0E0E6", "color": "black" });
+            });
+            $('#<%=gvNewsAndViews.ClientID%> tr').hover(function() {
+            $('#<%=gvNewsAndViews.ClientID%> tr').css({ "background-color": "white", "color": "black" });
+            $(this).css({ "background-color": "#B0E0E7", "color": "black" });
+            });
+        });
+    }
+    function userSelected(userId) {
+        PageMethods.GetArticleDescription(userId,CallSuccess);
+                 
              
     }
 
     function CallSuccess(res) {
         var obj = document.getElementById("<%= lblArticleDes.ClientID %>");
         obj.innerHTML = res;
-    }
-
-    function selectedRow(gridselectedRow) {
-
-        gridselectedRow.style.backgroundColor = 'yellow';
     }
 
 </script>
