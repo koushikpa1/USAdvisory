@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Web Developer Express 2008
+# Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DStreet.USAdvisory.Business", "DStreet.USAdvisory.Business\DStreet.USAdvisory.Business.csproj", "{DE3D0C79-2BAA-4633-83CE-95FA4454F5E2}"
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "USAdvisory", "USAdvisory\", "{927E72A3-35AA-4637-BC61-1A738FC0B89E}"
@@ -20,7 +20,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "USAdvisory", "USAdvisory\",
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "3142"
+		VWDPort = "3951"
 	EndProjectSection
 EndProject
 Global

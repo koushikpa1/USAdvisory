@@ -13,6 +13,11 @@ namespace DStreet.USAdvisory.Business.UI.Portfolio
            return portfolioDAL.GetAllPortfolio(openOrClose);
        }
 
+        public VirtualPortfolio GetPortfolioByTransactionId(int stockTransactionID)
+        {
+            return portfolioDAL.GetPortfolioByTransactionId(stockTransactionID);
+        }
+
        private int _portfolioId = 1;
 
        public int PortfolioId

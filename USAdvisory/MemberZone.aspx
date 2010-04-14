@@ -7,6 +7,13 @@
 <%@ Register Src="Controls/Advertisements.ascx" TagName="Advertisements" TagPrefix="Advertisements_uc" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<script type="text/javascript" src="js/UI_MyAccount.js"></script>
+<html>
+<head>
+
+</head>
+<body onload="changeMenuColor('MemberZone')">
+<form id="form1" runat="server">
     <Header_uc:Header ID="header" runat="server" />
  <div class="content-block">
 
@@ -86,4 +93,7 @@
  <div class="clear-div">
             </div>
 </div>
+</form>
+</body>
+</html>
 </asp:Content>

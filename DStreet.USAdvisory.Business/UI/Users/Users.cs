@@ -110,26 +110,6 @@ namespace DStreet.USAdvisory.Business.UI.Users
            
         }
 
-        #endregion
-
-        public void AddUser()
-        {
-            UsersDAL.AddUser(this, SubscriptionStartDate, SubscriptionEndDate);
-        }
-
-        public bool UpdatePassword(string username, string oldPasswd, string newPasswd )
-        {
-           return UsersDAL.UpdatePassword(username, oldPasswd, newPasswd);
-        }
-
-        public bool UpdateMobileNo(string username, string oldNumber, string newNumber)
-        {
-           return UsersDAL.UpdateMobileNumber(username, oldNumber, newNumber);
-        }
-
-
-        #region IUser Members
-
         public DateTime RegistrationDate
         {
             get
@@ -167,5 +147,32 @@ namespace DStreet.USAdvisory.Business.UI.Users
         }
 
         #endregion
+
+        public void AddUser()
+        {
+            UsersDAL.AddUser(this, SubscriptionStartDate, SubscriptionEndDate);
+        }
+
+        public bool UpdatePassword(string username, string oldPasswd, string newPasswd )
+        {
+           return UsersDAL.UpdatePassword(username, oldPasswd, newPasswd);
+        }
+
+        public bool UpdateMobileNo(string username, string oldNumber, string newNumber)
+        {
+           return UsersDAL.UpdateMobileNumber(username, oldNumber, newNumber);
+        }
+
+        public Users getUserByUserID(string userID)
+        {
+            return UsersDAL.getUserByUserID(userID);
+
+        }
+
+        public bool IsAuthorizedUser(string username, string password)
+        {
+            return true;
+        }
+       
    }
 }

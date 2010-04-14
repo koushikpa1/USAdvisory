@@ -3,58 +3,64 @@
 
 <%@ Register Src="Controls/Header.ascx" TagName="Header" TagPrefix="Header_uc" %>
 <%@ Register Assembly="MSCaptcha" Namespace="MSCaptcha" TagPrefix="cc1" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
-        
-    <Header_uc:Header ID="header" runat="server" />
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">    
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Untitled Page</title>
 
-<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
-<script type="text/javascript" src="../js/jquery.validate.js"></script>
+        <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+
+        <script type="text/javascript" src="../js/jquery.validate.js"></script>
+
         <script type="text/javascript">
             $(document).ready(function() {
+                jQuery.validator.addMethod("phoneUS", function(phone_number, element) {
+                    phone_number = phone_number.replace(/\s+/g, "");
+                    return this.optional(element) || phone_number.length > 9 &&
+		phone_number.match(/^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?[2-9]\d{2}-?\d{4}$/);
+                }, "Please specify a valid phone number");
+
                 $("#<%=form1.ClientID%>").validate({
                     rules: {
                         "<%=txtFirstName.UniqueID %>": {
                             required: true,
-                            minlength: 2
+                            minlength: 3
                         },
                         "<%=txtLastName.UniqueID %>": {
                             required: true,
-                            minlength: 2
+                            minlength: 3
                         },
 
                         "<%=txtUserId.UniqueID %>": {
                             required: true,
-                            minlength: 2
+                            email: true
                         },
                         "<%=txtconfirmUserId.UniqueID %>": {
                             required: true,
-                            minlength: 2,
                             equalTo: "input[name='<%=txtUserId.UniqueID %>']"
                         },
                         "<%=txtPhoneNumber.UniqueID %>": {
                             required: true,
-                            minlength: 2
+                            phoneUS: true
                         },
 
                         "<%=txtPassword.UniqueID %>": {
                             required: true
-                            
+
                         },
 
                         "<%=txtConfirmPassword.UniqueID %>": {
-                        required: true,
-                        //equalTo: $('#<%= txtPassword.UniqueID %>').valueOf()
-                        equalTo: "input[name='<%=txtPassword.UniqueID %>']"
+                            required: true,
+                            //equalTo: $('#<%= txtPassword.UniqueID %>').valueOf()
+                            equalTo: "input[name='<%=txtPassword.UniqueID %>']"
                         }
                     },
                     messages: {
                         "<%=txtFirstName.UniqueID %>": "Enter your First Name",
                         "<%=txtLastName.UniqueID %>": "Enter your Last Name",
-                        "<%=txtUserId.UniqueID %>": "Enter you User Id",
+                        "<%=txtUserId.UniqueID %>": {
+                            email: "Enter a valid email Id"
+                        },
                         "<%=txtconfirmUserId.UniqueID %>": {
                             required: "Please re enter your User Id",
                             equalTo: "The User ids do not match"
@@ -72,23 +78,22 @@
         </script>
 
         <style type="text/css">
-           
             input.error
             {
                 border: 1px dotted red;
-            }          
+            }
             label.error
-            {               
-                float:  left;
+            {
+                float: left;
                 color: red;
                 padding-left: .5em;
-                vertical-align: top;                 
+                vertical-align: top;
             }
         </style>
-
     </head>
     <body>
-        <form id ="form1" runat="server" action="" method="get">
+        <form id="form1" runat="server" action="" method="get">
+        <Header_uc:Header ID="header1" runat="server" />
         <div class="content-block">
             <!--............inner-middle..........-->
             <div class="inner-page-mid-block">
@@ -99,9 +104,9 @@
                     </div>
                     <div class="register-box-middle">
                         <form action="#" class="form-register">
-                        <table width="320" >
+                        <table width="320">
                             <tr>
-                                <td style="width:40%">
+                                <td style="width: 40%" style="font-weight: bold">
                                     First Name: *
                                 </td>
                                 <td>
@@ -109,7 +114,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Last Name: *
                                 </td>
                                 <td>
@@ -117,7 +122,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     <label>
                                         User Id: *</label>
                                 </td>
@@ -126,7 +131,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Confirm User Id *:
                                 </td>
                                 <td>
@@ -134,23 +139,25 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Password: *
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtPassword" runat="server" CssClass="textbox" name="password"></asp:TextBox>
-                                </td>
-                            </tr>                            
-                            <tr>
-                                <td>
-                                    Confirm Password: *
-                                </td>
-                                <td>
-                                    <asp:TextBox ID="txtConfirmPassword" runat="server" CssClass="textbox" name="confirmPassword"></asp:TextBox>
+                                    <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="textbox"
+                                        name="password"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
+                                <td style="font-weight: bold">
+                                    Confirm Password: *
+                                </td>
                                 <td>
+                                    <asp:TextBox ID="txtConfirmPassword" runat="server" TextMode="Password" CssClass="textbox"
+                                        name="confirmPassword"></asp:TextBox>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold">
                                     Phone:
                                 </td>
                                 <td>
@@ -158,7 +165,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Address:
                                 </td>
                                 <td>
@@ -166,15 +173,15 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     State:
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="txtState" runat="server" CssClass="textbox"  name="state"></asp:TextBox>
+                                    <asp:TextBox ID="txtState" runat="server" CssClass="textbox" name="state"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Country:
                                 </td>
                                 <td>
@@ -182,17 +189,18 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
+                                <td style="font-weight: bold">
                                     Zip:
                                 </td>
                                 <td>
                                     <asp:TextBox ID="txtZip" runat="server" CssClass="textbox" name="zip"></asp:TextBox>
                                 </td>
-                            </tr> 
+                            </tr>
                             <tr>
-                            <td><asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_OnClick" Text="Register" /></td>
-                            
-                            </tr>                           
+                                <td>
+                                    <asp:Button ID="btnRegister" runat="server" OnClick="btnRegister_OnClick" Text="Register" />
+                                </td>
+                            </tr>
                         </table>
                         </form>
                     </div>
@@ -219,8 +227,8 @@
                     <cc1:CaptchaControl ID="ccJoin" runat="server" CaptchaBackgroundNoise="High" CaptchaLength="5"
                         CaptchaHeight="60" CaptchaWidth="200" CaptchaLineNoise="High" CaptchaMinTimeout="5"
                         CaptchaMaxTimeout="240" />
-                    
-                    <asp:TextBox ID="txtCaptcha" runat="server"></asp:TextBox>
+                    <br />
+                    <asp:TextBox ID="txtCaptcha" runat="server" CssClass="textbox"></asp:TextBox>
                     <%--<div class="register-captcha"></div>--%>
                 </div>
                 <%--<div class="register-button" onclick="btnRegister_OnClick" runat="server"><a href="#">Register</a></div>--%>
@@ -237,7 +245,7 @@
                 <div class="add">
                     <img src="images/add-3.jpg" alt="E Trade" /></div>
             </div>
-        </div>        
+        </div>
         </form>
     </body>
     </html>

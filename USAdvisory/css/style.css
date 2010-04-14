@@ -14,6 +14,10 @@ margin:0px;
 	width: 180px;
 }
 
+.dropdown {
+border: 1px solid #6297BC;
+width: 200px;
+}
 
 h1
 {
@@ -180,8 +184,8 @@ width:770px;
 
 #menu-content li a#current
 {
-	background-color:#3f87d1;
-	font-weight:bold;
+	/*background-color:#3f87d1;*/
+	/*font-weight:bold;*/
 }
 .blueline
 {

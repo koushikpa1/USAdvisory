@@ -7,8 +7,13 @@
 <%@ Register Src="Controls/MarketWatchOut.ascx" TagName="MarketWatchOut" TagPrefix="MarketWatchOut_uc" %>
 <%@ Register Src="Controls/Advertisements.ascx" TagName="Advertisements" TagPrefix="Advertisements_uc" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
+   <script type="text/javascript" src="js/UI_MyAccount.js"></script> 
+  <html>
+  <head></head>
+<body onload="changeMenuColor('Performance')">  
     <form id="Form1" runat="server">
+    <Header_uc:Header ID="header" runat="server" />
+    
     <asp:ScriptManager ID="smDefault" runat="Server">
     </asp:ScriptManager>
     <div class="main-block">
@@ -24,7 +29,7 @@
                         <ContentTemplate>
                             <asp:GridView ID="GridView_Performance" runat="server" CellPadding="4" ForeColor="#333333"
                                 GridLines="None" AutoGenerateColumns="False" OnPageIndexChanging="GridView_Performance_PageIndexChanging"
-                                AllowPaging="true">
+                                AllowPaging="true" DataKeyNames="ArticleId">
                                 <Columns>
                                     <asp:BoundField DataField="Ticker" HeaderText="Ticker" SortExpression="Ticker" HeaderStyle-Width="100"
                                         ItemStyle-HorizontalAlign="Center">
@@ -41,11 +46,16 @@
                                         <HeaderStyle Width="100px" />
                                         <ItemStyle HorizontalAlign="Center" />
                                     </asp:BoundField>
-                                    <asp:HyperLinkField HeaderText="Recommendation" DataTextField="ArticleTitle" DataNavigateUrlFormatString="javascript:alert('Yet to Implement');"
-                                        DataNavigateUrlFields="ArticleID" HeaderStyle-Width="340" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="340">
-                                       
+                                    <asp:HyperLinkField HeaderText="Recommendation" DataTextField="ArticleTitle" DataNavigateUrlFields="ArticleID"
+                                        HeaderStyle-Width="340" ItemStyle-HorizontalAlign="Center" ItemStyle-Width="340">
                                         <ItemStyle HorizontalAlign="Center" />
                                     </asp:HyperLinkField>
+                                    <asp:TemplateField>
+                                        <ItemTemplate>
+                                            <a rel="#facebox" href='<%#Eval("ArticleId","ModalPopUp.aspx?Id={0}&TradeType=1")%>'>
+                                                <img border="0" src="Images/mag_glass_icon.gif" alt="View" /></a>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
                                 </Columns>
                                 <PagerSettings FirstPageText="First" LastPageText="Last" Mode="NextPreviousFirstLast"
                                     NextPageText="Next" PreviousPageText="Prev" />

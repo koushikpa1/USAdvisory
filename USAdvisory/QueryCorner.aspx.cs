@@ -10,13 +10,24 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web;
 using System.Configuration;
-
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 public partial class QueryCorner : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        if (Session["UserName"] != null)
+        {
+            Control control = header.FindControl("login");
+            Control logindiv = control.FindControl("ControlLogin");
+            Control welcomediv = control.FindControl("ControlUserInfo");
+            Label labelName = (Label)welcomediv.FindControl("lblWelcome");
+            labelName.Text = "Welcome " + (string)Session["UserName"] + "!";
+            logindiv.Visible = false;
+            welcomediv.Visible = true;
+        }
     }
     protected void btnSubmit_Click(object sender, EventArgs e)
     {
