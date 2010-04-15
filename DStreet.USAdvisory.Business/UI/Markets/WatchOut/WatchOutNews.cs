@@ -15,7 +15,7 @@ namespace DStreet.USAdvisory.Business.UI.Markets.WatchOut
         private string _articleTitle = string.Empty;
         private DateTime _articleDateTime = DateTime.MinValue;
         private bool _isActive;
-        private bool _isPaid;
+        private short _isPaid;
         private string _ticker;
 
 
@@ -73,7 +73,7 @@ namespace DStreet.USAdvisory.Business.UI.Markets.WatchOut
         /// 
         /// </summary>
 
-        public bool IsPaid
+        public short IsPaid
         {
             get
             {

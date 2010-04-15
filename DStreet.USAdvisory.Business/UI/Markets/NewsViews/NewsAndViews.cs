@@ -16,7 +16,7 @@ namespace DStreet.USAdvisory.Business.UI.Markets.NewsViews
         private DateTime _articleDateTime = DateTime.MinValue;
         private string _ticker = string.Empty;
         private bool _isActive;
-        private bool _isPaid;
+        private short _isPaid;
 
         #region IArticle Members
 
@@ -72,7 +72,7 @@ namespace DStreet.USAdvisory.Business.UI.Markets.NewsViews
         /// 
         /// </summary>
 
-        public bool IsPaid
+        public short IsPaid
         {
             get
             {

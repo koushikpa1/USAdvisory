@@ -4,11 +4,11 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <Header_uc:Header ID="header" runat="server" />
+    
     <html>    
     <body>
     <form id="form1" runat="server">
-    
+    <Header_uc:Header ID="header" runat="server" />
     <asp:ScriptManager ID="smDefault" runat="server" EnablePageMethods="true">
         <Scripts>           
            

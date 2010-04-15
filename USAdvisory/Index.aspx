@@ -8,7 +8,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
- <Header_uc:Header ID="header" runat="server" />
+ <%--<Header_uc:Header ID="header" runat="server" />--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="marketToday"  runat="server">
 <MarketToday_uc:MarketToday ID="MarketToday" runat="server" />

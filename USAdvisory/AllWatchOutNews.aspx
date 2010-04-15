@@ -11,7 +11,7 @@
         <td>
         <span class="justifyText"><img src="images/bullet-black.jpg" />
        <b><%# DataBinder.Eval(Container.DataItem, "ArticleDate", "{0:HH:mm}")%> - <%# DataBinder.Eval(Container.DataItem, "ArticleTitle")%></b>
-        <%#IsPaidNews((bool)DataBinder.Eval(Container.DataItem, "IsPaid"), (string)DataBinder.Eval(Container.DataItem, "ArticleDesc"), (string)DataBinder.Eval(Container.DataItem, "Ticker"))%></span>
+        <%#IsPaidNews((short)DataBinder.Eval(Container.DataItem, "IsPaid"), (string)DataBinder.Eval(Container.DataItem, "ArticleDesc"), (string)DataBinder.Eval(Container.DataItem, "Ticker"))%></span>
         </td>
         </tr>
         </ItemTemplate>
@@ -25,7 +25,7 @@
                 <tr><td>
         <span class="justifyText"><img src="images/bullet-black.jpg" />
         <b><%# DataBinder.Eval(Container.DataItem, "ArticleDate", "{0:HH:mm}")%> - <%# DataBinder.Eval(Container.DataItem, "ArticleTitle")%></b>
-        <%#IsPaidNews((bool)DataBinder.Eval(Container.DataItem, "IsPaid"), (string)DataBinder.Eval(Container.DataItem, "ArticleDesc"), (string)DataBinder.Eval(Container.DataItem, "Ticker"))%></span>
+        <%#IsPaidNews((short)DataBinder.Eval(Container.DataItem, "IsPaid"), (string)DataBinder.Eval(Container.DataItem, "ArticleDesc"), (string)DataBinder.Eval(Container.DataItem, "Ticker"))%></span>
         </td>
         </tr>
         </AlternatingItemTemplate>

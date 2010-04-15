@@ -46,7 +46,7 @@ namespace DStreet.USAdvisory.Business.UI.Markets.WatchOut.DAL
                    _watchOut.ArticleDesc = dr["WatchOutText"].ToString();
                    _watchOut.ArticleDate = DateTime.Parse(dr["WatchOutDateTime"].ToString());
                    _watchOut.Ticker = dr["Ticker"].ToString();
-                   _watchOut.IsPaid = bool.Parse(dr["IsPaid"].ToString());
+                   _watchOut.IsPaid = short.Parse(dr["IsPaid"].ToString());
                    _watchoutNews.Add(_watchOut);
 
                }

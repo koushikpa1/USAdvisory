@@ -49,7 +49,7 @@ namespace DStreet.USAdvisory.Business.UI.Markets.NewsViews.DAL
                    _newsviewsListing.ArticleDesc = dr["NewsDescription"].ToString();
                    _newsviewsListing.ArticleDate = DateTime.Parse(dr["Newsdatetime"].ToString());
                    _newsviewsListing.Ticker = dr["Ticker"].ToString();
-                   _newsviewsListing.IsPaid = bool.Parse(dr["IsPaid"].ToString());
+                   _newsviewsListing.IsPaid = short.Parse(dr["IsPaid"].ToString());
                    _article.Add(_newsviewsListing);
 
                }
@@ -90,7 +90,7 @@ namespace DStreet.USAdvisory.Business.UI.Markets.NewsViews.DAL
                _newsviewsListing.ArticleDesc = dr["NewsDescription"].ToString();
                _newsviewsListing.ArticleDate = DateTime.Parse(dr["Newsdatetime"].ToString());
                _newsviewsListing.Ticker = dr["Ticker"].ToString();
-               _newsviewsListing.IsPaid = bool.Parse(dr["IsPaid"].ToString());
+               _newsviewsListing.IsPaid = short.Parse(dr["IsPaid"].ToString());
 
                return _newsviewsListing;
            }

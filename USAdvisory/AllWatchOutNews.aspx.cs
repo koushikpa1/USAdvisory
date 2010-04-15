@@ -20,20 +20,50 @@ public partial class AllWatchOutNews : System.Web.UI.Page
         watchOutRepeater.DataBind();
 
     }
-    protected string IsPaidNews(bool isPaidNews,string articleDesc,string articleTicker)
+    protected string IsPaidNews(short isPaidNews,string articleDesc,string articleTicker)
     {
         //TO DO: Need to get the current login user.
         //Dummy data for the user. 
         Users usr = new Users();
-        usr.IsPaidSubscriber= false;
-        if (isPaidNews)
+        usr.IsPaidSubscriber= true;
+        usr = null;
+        string returnValue = string.Empty;
+        switch (isPaidNews)
         {
-            if (usr.IsPaidSubscriber)
-                return articleDesc;
-            else
-                return "<p>" + articleTicker + "</P>";
+            case 0:
+                returnValue = articleDesc;
+                break;
+            case 1:
+                if (usr != null)
+                {
+                    returnValue = articleDesc;
+                }
+                //For free(unregistered users who have not logged in)
+                else
+                {
+                    returnValue = "<p>" + articleTicker + " - This information is available for Registered Users (Free).<B> <a href='register.aspx' style='color:Red'>Click here</a></B> to Register Link</P>";
+                }
+
+                break;
+            case 2:
+                if (usr != null)
+                {
+                    if (usr.IsPaidSubscriber)
+                    {
+                        returnValue = articleDesc;
+                    }
+                    else
+                    {
+                        returnValue = "<p>" + articleTicker + " - This information is available for Registered Users (Premium).<B> <a href='Subscriptions.aspx' style='color:Red'>Click here</a></B> to Upgrade membership</P>";
+                    }
+                }
+                else
+                {
+                    returnValue = "<p>" + articleTicker + " - This information is available for Registered Users (Premium).<B> <a href='register.aspx' style='color:Red'>Click here</a></B> to Register Link</P>";
+                }
+                break;
         }
 
-        return articleDesc;
+        return returnValue;
     }
 }
