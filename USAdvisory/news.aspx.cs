@@ -31,10 +31,10 @@ public partial class news : System.Web.UI.Page
             newsDescription.ArticleId = listNewsAndViews[0].ArticleId;
             gvNewsAndViews.Rows[0].BackColor = System.Drawing.Color.FromName("#B0E0E6");
         }
-        NewsAndViews newsDescription1 = new NewsAndViews();
-        newsDescription1 = newsDescription.GetAllNewsAndViewsById();
-        lblArticleDes.Text = newsDescription1.ArticleDesc;
-
+        //NewsAndViews newsDescription1 = new NewsAndViews();
+        //newsDescription1 = newsDescription.GetAllNewsAndViewsById();
+        //lblArticleDes.Text = newsDescription1.ArticleDesc;
+        lblArticleDes.Text = GetArticleDescription(newsDescription.ArticleId);
 
     }
 
@@ -44,7 +44,7 @@ public partial class news : System.Web.UI.Page
         gvNewsAndViews.DataBind();
 
         NewsAndViews newsDescription = new NewsAndViews();
-        lblArticleDes.Text = newsDescription.GetAllNewsAndViews()[e.NewPageIndex * 10].ArticleDesc;
+        lblArticleDes.Text = GetArticleDescription(newsDescription.GetAllNewsAndViews()[e.NewPageIndex * 10].ArticleId);
 
         UpdatePanel2.Update();
     }
